@@ -1,12 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
 var version = {title: "TiddlyWiki", major: 2, minor: 8, revision: 1, date: new Date("June 23, 2013"), extensions: {}};
 
 //]]>
 </script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="copyright" content="
 TiddlyWiki created by Jeremy Ruston, (jeremy [at] osmosoft [dot] com)
 
@@ -38,14 +39,16 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
 ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGE.
 
-">
+" />
 <!--PRE-HEAD-START-->
 <!--{{{-->
-<link rel="alternate" type="application/rss+xml" title="RSS" href="file:///home/liush/%E4%B8%8B%E8%BD%BD/mywiki/index.xml">
+<link rel='alternate' type='application/rss+xml' title='RSS' href='index.xml' />
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title>My TiddlyWiki - a reusable non-linear personal web notebook</title>
+<title>
+
+</title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -59,323 +62,13 @@ DAMAGE.
 <!--POST-HEAD-START-->
 
 <!--POST-HEAD-END-->
-<style id="StyleSheetLayout" type="text/css">/*{{{*/
-* html .tiddler {height:1%;}
-
-body {font-size:.75em; font-family:arial,helvetica; margin:0; padding:0;}
-
-h1,h2,h3,h4,h5,h6 {font-weight:bold; text-decoration:none;}
-h1,h2,h3 {padding-bottom:1px; margin-top:1.2em;margin-bottom:0.3em;}
-h4,h5,h6 {margin-top:1em;}
-h1 {font-size:1.35em;}
-h2 {font-size:1.25em;}
-h3 {font-size:1.1em;}
-h4 {font-size:1em;}
-h5 {font-size:.9em;}
-
-hr {height:1px;}
-
-a {text-decoration:none;}
-
-dt {font-weight:bold;}
-
-ol {list-style-type:decimal;}
-ol ol {list-style-type:lower-alpha;}
-ol ol ol {list-style-type:lower-roman;}
-ol ol ol ol {list-style-type:decimal;}
-ol ol ol ol ol {list-style-type:lower-alpha;}
-ol ol ol ol ol ol {list-style-type:lower-roman;}
-ol ol ol ol ol ol ol {list-style-type:decimal;}
-
-.txtOptionInput {width:11em;}
-
-#contentWrapper .chkOptionInput {border:0;}
-
-.externalLink {text-decoration:underline;}
-
-.indent {margin-left:3em;}
-.outdent {margin-left:3em; text-indent:-3em;}
-code.escaped {white-space:nowrap;}
-
-.tiddlyLinkExisting {font-weight:bold;}
-.tiddlyLinkNonExisting {font-style:italic;}
-
-/* the 'a' is required for IE, otherwise it renders the whole tiddler in bold */
-a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
-
-#mainMenu .tiddlyLinkExisting,
-	#mainMenu .tiddlyLinkNonExisting,
-	#sidebarTabs .tiddlyLinkNonExisting {font-weight:normal; font-style:normal;}
-#sidebarTabs .tiddlyLinkExisting {font-weight:bold; font-style:normal;}
-
-.header {position:relative;}
-.header a:hover {background:transparent;}
-.headerShadow {position:relative; padding:4.5em 0 1em 1em; left:-1px; top:-1px;}
-.headerForeground {position:absolute; padding:4.5em 0 1em 1em; left:0; top:0;}
-
-.siteTitle {font-size:3em;}
-.siteSubtitle {font-size:1.2em;}
-
-#mainMenu {position:absolute; left:0; width:10em; text-align:right; line-height:1.6em; padding:1.5em 0.5em 0.5em 0.5em; font-size:1.1em;}
-
-#sidebar {position:absolute; right:3px; width:16em; font-size:.9em;}
-#sidebarOptions {padding-top:0.3em;}
-#sidebarOptions a {margin:0 0.2em; padding:0.2em 0.3em; display:block;}
-#sidebarOptions input {margin:0.4em 0.5em;}
-#sidebarOptions .sliderPanel {margin-left:1em; padding:0.5em; font-size:.85em;}
-#sidebarOptions .sliderPanel a {font-weight:bold; display:inline; padding:0;}
-#sidebarOptions .sliderPanel input {margin:0 0 0.3em 0;}
-#sidebarTabs .tabContents {width:15em; overflow:hidden;}
-
-.wizard {padding:0.1em 1em 0 2em;}
-.wizard h1 {font-size:2em; font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em;}
-.wizard h2 {font-size:1.2em; font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em;}
-.wizardStep {padding:1em 1em 1em 1em;}
-.wizard .button {margin:0.5em 0 0; font-size:1.2em;}
-.wizardFooter {padding:0.8em 0.4em 0.8em 0;}
-.wizardFooter .status {padding:0 0.4em; margin-left:1em;}
-.wizard .button {padding:0.1em 0.2em;}
-
-#messageArea {position:fixed; top:2em; right:0; margin:0.5em; padding:0.5em; z-index:2000; _position:absolute;}
-.messageToolbar {display:block; text-align:right; padding:0.2em;}
-#messageArea a {text-decoration:underline;}
-
-.tiddlerPopupButton {padding:0.2em;}
-.popupTiddler {position: absolute; z-index:300; padding:1em; margin:0;}
-
-.popup {position:absolute; z-index:300; font-size:.9em; padding:0; list-style:none; margin:0;}
-.popup .popupMessage {padding:0.4em;}
-.popup hr {display:block; height:1px; width:auto; padding:0; margin:0.2em 0;}
-.popup li.disabled {padding:0.4em;}
-.popup li a {display:block; padding:0.4em; font-weight:normal; cursor:pointer;}
-.listBreak {font-size:1px; line-height:1px;}
-.listBreak div {margin:2px 0;}
-
-.tabset {padding:1em 0 0 0.5em;}
-.tab {margin:0 0 0 0.25em; padding:2px;}
-.tabContents {padding:0.5em;}
-.tabContents ul, .tabContents ol {margin:0; padding:0;}
-.txtMainTab .tabContents li {list-style:none;}
-.tabContents li.listLink { margin-left:.75em;}
-
-#contentWrapper {display:block;}
-#splashScreen {display:none;}
-
-#displayArea {margin:1em 17em 0 14em;}
-
-.toolbar {text-align:right; font-size:.9em;}
-
-.tiddler {padding:1em 1em 0;}
-
-.missing .viewer,.missing .title {font-style:italic;}
-
-.title {font-size:1.6em; font-weight:bold;}
-
-.missing .subtitle {display:none;}
-.subtitle {font-size:1.1em;}
-
-.tiddler .button {padding:0.2em 0.4em;}
-
-.tagging {margin:0.5em 0.5em 0.5em 0; float:left; display:none;}
-.isTag .tagging {display:block;}
-.tagged {margin:0.5em; float:right;}
-.tagging, .tagged {font-size:0.9em; padding:0.25em;}
-.tagging ul, .tagged ul {list-style:none; margin:0.25em; padding:0;}
-.tagClear {clear:both;}
-
-.footer {font-size:.9em;}
-.footer li {display:inline;}
-
-.annotation {padding:0.5em; margin:0.5em;}
-
-* html .viewer pre {width:99%; padding:0 0 1em 0;}
-.viewer {line-height:1.4em; padding-top:0.5em;}
-.viewer .button {margin:0 0.25em; padding:0 0.25em;}
-.viewer blockquote {line-height:1.5em; padding-left:0.8em;margin-left:2.5em;}
-.viewer ul, .viewer ol {margin-left:0.5em; padding-left:1.5em;}
-
-.viewer table, table.twtable {border-collapse:collapse; margin:0.8em 1.0em;}
-.viewer th, .viewer td, .viewer tr,.viewer caption,.twtable th, .twtable td, .twtable tr,.twtable caption {padding:3px;}
-table.listView {font-size:0.85em; margin:0.8em 1.0em;}
-table.listView th, table.listView td, table.listView tr {padding:0 3px 0 3px;}
-
-.viewer pre {padding:0.5em; margin-left:0.5em; font-size:1.2em; line-height:1.4em; overflow:auto;}
-.viewer code {font-size:1.2em; line-height:1.4em;}
-
-.editor {font-size:1.1em;}
-.editor input, .editor textarea {display:block; width:100%; font:inherit;}
-.editorFooter {padding:0.25em 0; font-size:.9em;}
-.editorFooter .button {padding-top:0; padding-bottom:0;}
-
-.fieldsetFix {border:0; padding:0; margin:1px 0px;}
-
-.zoomer {font-size:1.1em; position:absolute; overflow:hidden;}
-.zoomer div {padding:1em;}
-
-* html #backstage {width:99%;}
-* html #backstageArea {width:99%;}
-#backstageArea {display:none; position:relative; overflow: hidden; z-index:150; padding:0.3em 0.5em;}
-#backstageToolbar {position:relative;}
-#backstageArea a {font-weight:bold; margin-left:0.5em; padding:0.3em 0.5em;}
-#backstageButton {display:none; position:absolute; z-index:175; top:0; right:0;}
-#backstageButton a {padding:0.1em 0.4em; margin:0.1em;}
-#backstage {position:relative; width:100%; z-index:50;}
-#backstagePanel {display:none; z-index:100; position:absolute; width:90%; margin-left:3em; padding:1em;}
-.backstagePanelFooter {padding-top:0.2em; float:right;}
-.backstagePanelFooter a {padding:0.2em 0.4em;}
-#backstageCloak {display:none; z-index:20; position:absolute; width:100%; height:100px;}
-
-.whenBackstage {display:none;}
-.backstageVisible .whenBackstage {display:block;}
-/*}}}*/
-</style><style id="StyleSheetColors" type="text/css">/*{{{*/
-body {background:#fff; color:#000;}
-
-a {color:#04b;}
-a:hover {background-color:#04b; color:#fff;}
-a img {border:0;}
-
-h1,h2,h3,h4,h5,h6 {color:#841; background:transparent;}
-h1 {border-bottom:2px solid #ccc;}
-h2,h3 {border-bottom:1px solid #ccc;}
-
-.button {color:#014; border:1px solid #fff;}
-.button:hover {color:#014; background:#fe8; border-color:#db4;}
-.button:active {color:#fff; background:#db4; border:1px solid #841;}
-
-.header {background:#04b;}
-.headerShadow {color:#000;}
-.headerShadow a {font-weight:normal; color:#000;}
-.headerForeground {color:#fff;}
-.headerForeground a {font-weight:normal; color:#8cf;}
-
-.tabSelected {color:#014;
-	background:#eee;
-	border-left:1px solid #ccc;
-	border-top:1px solid #ccc;
-	border-right:1px solid #ccc;
-}
-.tabUnselected {color:#fff; background:#999;}
-.tabContents {color:#014; background:#eee; border:1px solid #ccc;}
-.tabContents .button {border:0;}
-
-#sidebar {}
-#sidebarOptions input {border:1px solid #04b;}
-#sidebarOptions .sliderPanel {background:#8cf;}
-#sidebarOptions .sliderPanel a {border:none;color:#04b;}
-#sidebarOptions .sliderPanel a:hover {color:#fff; background:#04b;}
-#sidebarOptions .sliderPanel a:active {color:#04b; background:#fff;}
-
-.wizard {background:#8cf; border:1px solid #04b;}
-.wizard h1 {color:#014; border:none;}
-.wizard h2 {color:#000; border:none;}
-.wizardStep {background:#fff; color:#000;
-	border:1px solid #04b;}
-.wizardStep.wizardStepDone {background:#ccc;}
-.wizardFooter {background:#8cf;}
-.wizardFooter .status {background:#014; color:#fff;}
-.wizard .button {color:#000; background:#fe8; border: 1px solid;
-	border-color:#ffc #841 #841 #ffc;}
-.wizard .button:hover {color:#000; background:#fff;}
-.wizard .button:active {color:#fff; background:#000; border: 1px solid;
-	border-color:#014 #8cf #8cf #014;}
-
-.wizard .notChanged {background:transparent;}
-.wizard .changedLocally {background:#80ff80;}
-.wizard .changedServer {background:#8080ff;}
-.wizard .changedBoth {background:#ff8080;}
-.wizard .notFound {background:#ffff80;}
-.wizard .putToServer {background:#ff80ff;}
-.wizard .gotFromServer {background:#80ffff;}
-
-#messageArea {border:1px solid #db4; background:#fe8; color:#000;}
-#messageArea .button {color:#04b; background:#ffc; border:none;}
-
-.popupTiddler {background:#eee; border:2px solid #999;}
-
-.popup {background:#eee; color:#666; border-left:1px solid #999; border-top:1px solid #999; border-right:2px solid #666; border-bottom:2px solid #666;}
-.popup hr {color:#014; background:#014; border-bottom:1px;}
-.popup li.disabled {color:#999;}
-.popup li a, .popup li a:visited {color:#000; border: none;}
-.popup li a:hover {background:#fe8; color:#000; border: none;}
-.popup li a:active {background:#ffc; color:#000; border: none;}
-.popupHighlight {background:#fff; color:#000;}
-.listBreak div {border-bottom:1px solid #666;}
-
-.tiddler .defaultCommand {font-weight:bold;}
-
-.shadow .title {color:#666;}
-
-.title {color:#841;}
-.subtitle {color:#666;}
-
-.toolbar {color:#04b;}
-.toolbar a {color:#ccc;}
-.selected .toolbar a {color:#999;}
-.selected .toolbar a:hover {color:#000;}
-
-.tagging, .tagged {border:1px solid #eee; background-color:#eee;}
-.selected .tagging, .selected .tagged {background-color:#ccc; border:1px solid #999;}
-.tagging .listTitle, .tagged .listTitle {color:#014;}
-.tagging .button, .tagged .button {border:none;}
-
-.footer {color:#ccc;}
-.selected .footer {color:#999;}
-
-.error, .errorButton {color:#000; background:#f88;}
-.warning {color:#000; background:#ffc;}
-.lowlight {background:#ccc;}
-
-.zoomer {background:none; color:#999; border:3px solid #999;}
-
-.imageLink, #displayArea .imageLink {background:transparent;}
-
-.annotation {background:#fe8; color:#000; border:2px solid #db4;}
-
-.viewer .listTitle {list-style-type:none; margin-left:-2em;}
-.viewer .button {border:1px solid #db4;}
-.viewer blockquote {border-left:3px solid #666;}
-
-.viewer table, table.twtable {border:2px solid #666;}
-.viewer th, .viewer thead td, .twtable th, .twtable thead td {background:#db4; border:1px solid #666; color:#fff;}
-.viewer td, .viewer tr, .twtable td, .twtable tr {border:1px solid #666;}
-
-.viewer pre {border:1px solid #fe8; background:#ffc;}
-.viewer code {color:#841;}
-.viewer hr {border:0; border-top:dashed 1px #666; color:#666;}
-
-.highlight, .marked {background:#fe8;}
-
-.editor input {border:1px solid #04b;}
-.editor textarea {border:1px solid #04b; width:100%;}
-.editorFooter {color:#999;}
-.readOnly {background:#eee;}
-
-#backstageArea {background:#000; color:#999;}
-#backstageArea a {background:#000; color:#fff; border:none;}
-#backstageArea a:hover {background:#fe8; color:#000; }
-#backstageArea a.backstageSelTab {background:#fff; color:#000;}
-#backstageButton a {background:none; color:#fff; border:none;}
-#backstageButton a:hover {background:#000; color:#fff; border:none;}
-#backstagePanel {background:#fff; border-color: #fff #666 #666 #666;}
-.backstagePanelFooter .button {border:none; color:#fff;}
-.backstagePanelFooter .button:hover {color:#000;}
-#backstageCloak {background:#000; opacity:0.6; filter:alpha(opacity=60);}
-/*}}}*/
-</style><style id="StyleSheet" type="text/css"></style><style id="StyleSheetPrint" type="text/css">/*{{{*/
-@media print {
-#mainMenu, #sidebar, #messageArea, .toolbar, #backstageButton, #backstageArea {display: none !important;}
-#displayArea {margin: 1em 1em 0em;}
-noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print preview displays the noscript content */
-}
-/*}}}*/
-</style></head>
+</head>
 <body onload="main();" onunload="if(window.unload) unload();">
 <!--PRE-BODY-START-->
 
 <!--PRE-BODY-END-->
 <div id="copyright">
-Welcome to TiddlyWiki created by Jeremy Ruston; Copyright © 2004-2007 Jeremy Ruston, Copyright © 2007-2011 UnaMesa Association
+Welcome to TiddlyWiki created by Jeremy Ruston; Copyright &copy; 2004-2007 Jeremy Ruston, Copyright &copy; 2007-2011 UnaMesa Association
 </div>
 <noscript>
 <div id="javascriptWarning">
@@ -383,53 +76,14 @@ This page requires JavaScript to function properly.<br /><br />If you are using 
 </div>
 
 </noscript>
-<div id="saveTest">savetest</div>
+<div id="saveTest"></div>
 <div id="backstageCloak"></div>
-<div style="display: block;" id="backstageButton"><a style="display: none;" id="backstageShow" class="button" title="Open the backstage area to perform authoring and editing tasks" href="javascript:;">backstage ↩</a><a id="backstageHide" class="button" title="Close the backstage area" href="javascript:;">↪ close</a></div>
-<div style="display: block;" id="backstageArea"><div style="left: 0px;" id="backstageToolbar">backstage: <a task="save" class="backstageTab backstageAction" title="Save your changes to this TiddlyWiki" href="javascript:;">save</a><a task="importTask" class="backstageTab backstageTask" title="Import tiddlers and plugins from other TiddlyWiki files and servers" href="javascript:;">import▾</a><a task="tweak" class="backstageTab backstageTask" title="Tweak the appearance and behaviour of TiddlyWiki" href="javascript:;">tweak▾</a><a task="upgrade" class="backstageTab backstageTask" title="Upgrade TiddlyWiki core code" href="javascript:;">upgrade▾</a><a task="plugins" class="backstageTab backstageTask" title="Manage installed plugins" href="javascript:;">plugins▾</a></div></div>
+<div id="backstageButton"></div>
+<div id="backstageArea"><div id="backstageToolbar"></div></div>
 <div id="backstage">
-	<div id="backstagePanel"><div class="backstagePanelFooter"></div><div class="backstagePanelBody"></div></div>
+	<div id="backstagePanel"></div>
 </div>
-<div class="backstageVisible" id="contentWrapper"><!--{{{-->
-<div style="position: relative; overflow: hidden; z-index: 0;" class="header" role="banner">
-<div class="headerShadow">
-<span class="siteTitle" refresh="content" tiddler="SiteTitle">My <a tiddlylink="TiddlyWiki" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'TiddlyWiki' doesn't yet exist" href="javascript:;">TiddlyWiki</a></span>&nbsp;
-<span class="siteSubtitle" refresh="content" tiddler="SiteSubtitle">a reusable non-linear personal web notebook</span>
-</div>
-<div class="headerForeground">
-<span class="siteTitle" refresh="content" tiddler="SiteTitle">My <a tiddlylink="TiddlyWiki" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'TiddlyWiki' doesn't yet exist" href="javascript:;">TiddlyWiki</a></span>&nbsp;
-<span class="siteSubtitle" refresh="content" tiddler="SiteSubtitle">a reusable non-linear personal web notebook</span>
-</div>
-<div style="position: absolute; left: 0px; top: 0%; width: 100%; height: 101%; z-index: -1; background-color: rgb(17, 136, 255);"></div><div style="position: absolute; left: 0px; top: 2%; width: 100%; height: 99%; z-index: -1; background-color: rgb(16, 134, 253);"></div><div style="position: absolute; left: 0px; top: 4%; width: 100%; height: 97%; z-index: -1; background-color: rgb(16, 133, 252);"></div><div style="position: absolute; left: 0px; top: 6%; width: 100%; height: 95%; z-index: -1; background-color: rgb(15, 131, 250);"></div><div style="position: absolute; left: 0px; top: 8%; width: 100%; height: 93%; z-index: -1; background-color: rgb(15, 130, 249);"></div><div style="position: absolute; left: 0px; top: 10%; width: 100%; height: 91%; z-index: -1; background-color: rgb(15, 129, 248);"></div><div style="position: absolute; left: 0px; top: 12%; width: 100%; height: 89%; z-index: -1; background-color: rgb(14, 127, 246);"></div><div style="position: absolute; left: 0px; top: 14%; width: 100%; height: 87%; z-index: -1; background-color: rgb(14, 126, 245);"></div><div style="position: absolute; left: 0px; top: 16%; width: 100%; height: 85%; z-index: -1; background-color: rgb(14, 125, 244);"></div><div style="position: absolute; left: 0px; top: 18%; width: 100%; height: 83%; z-index: -1; background-color: rgb(13, 123, 242);"></div><div style="position: absolute; left: 0px; top: 20%; width: 100%; height: 81%; z-index: -1; background-color: rgb(13, 122, 241);"></div><div style="position: absolute; left: 0px; top: 22%; width: 100%; height: 79%; z-index: -1; background-color: rgb(13, 121, 240);"></div><div style="position: absolute; left: 0px; top: 24%; width: 100%; height: 77%; z-index: -1; background-color: rgb(12, 119, 238);"></div><div style="position: absolute; left: 0px; top: 26%; width: 100%; height: 75%; z-index: -1; background-color: rgb(12, 118, 237);"></div><div style="position: absolute; left: 0px; top: 28%; width: 100%; height: 73%; z-index: -1; background-color: rgb(12, 116, 235);"></div><div style="position: absolute; left: 0px; top: 30%; width: 100%; height: 71%; z-index: -1; background-color: rgb(11, 115, 234);"></div><div style="position: absolute; left: 0px; top: 32%; width: 100%; height: 69%; z-index: -1; background-color: rgb(11, 114, 233);"></div><div style="position: absolute; left: 0px; top: 34%; width: 100%; height: 67%; z-index: -1; background-color: rgb(11, 112, 231);"></div><div style="position: absolute; left: 0px; top: 36%; width: 100%; height: 65%; z-index: -1; background-color: rgb(10, 111, 230);"></div><div style="position: absolute; left: 0px; top: 38%; width: 100%; height: 63%; z-index: -1; background-color: rgb(10, 110, 229);"></div><div style="position: absolute; left: 0px; top: 40%; width: 100%; height: 61%; z-index: -1; background-color: rgb(10, 108, 227);"></div><div style="position: absolute; left: 0px; top: 42%; width: 100%; height: 59%; z-index: -1; background-color: rgb(9, 107, 226);"></div><div style="position: absolute; left: 0px; top: 44%; width: 100%; height: 57%; z-index: -1; background-color: rgb(9, 106, 225);"></div><div style="position: absolute; left: 0px; top: 46%; width: 100%; height: 55%; z-index: -1; background-color: rgb(9, 104, 223);"></div><div style="position: absolute; left: 0px; top: 48%; width: 100%; height: 53%; z-index: -1; background-color: rgb(8, 103, 222);"></div><div style="position: absolute; left: 0px; top: 50%; width: 100%; height: 51%; z-index: -1; background-color: rgb(8, 102, 221);"></div><div style="position: absolute; left: 0px; top: 52%; width: 100%; height: 49%; z-index: -1; background-color: rgb(8, 100, 219);"></div><div style="position: absolute; left: 0px; top: 54%; width: 100%; height: 47%; z-index: -1; background-color: rgb(7, 99, 218);"></div><div style="position: absolute; left: 0px; top: 56%; width: 100%; height: 45%; z-index: -1; background-color: rgb(7, 97, 216);"></div><div style="position: absolute; left: 0px; top: 58%; width: 100%; height: 43%; z-index: -1; background-color: rgb(7, 96, 215);"></div><div style="position: absolute; left: 0px; top: 60%; width: 100%; height: 41%; z-index: -1; background-color: rgb(6, 95, 214);"></div><div style="position: absolute; left: 0px; top: 62%; width: 100%; height: 39%; z-index: -1; background-color: rgb(6, 93, 212);"></div><div style="position: absolute; left: 0px; top: 64%; width: 100%; height: 37%; z-index: -1; background-color: rgb(6, 92, 211);"></div><div style="position: absolute; left: 0px; top: 66%; width: 100%; height: 35%; z-index: -1; background-color: rgb(5, 91, 210);"></div><div style="position: absolute; left: 0px; top: 68%; width: 100%; height: 33%; z-index: -1; background-color: rgb(5, 89, 208);"></div><div style="position: absolute; left: 0px; top: 70%; width: 100%; height: 31%; z-index: -1; background-color: rgb(5, 88, 207);"></div><div style="position: absolute; left: 0px; top: 72%; width: 100%; height: 29%; z-index: -1; background-color: rgb(4, 87, 206);"></div><div style="position: absolute; left: 0px; top: 74%; width: 100%; height: 27%; z-index: -1; background-color: rgb(4, 85, 204);"></div><div style="position: absolute; left: 0px; top: 76%; width: 100%; height: 25%; z-index: -1; background-color: rgb(4, 84, 203);"></div><div style="position: absolute; left: 0px; top: 78%; width: 100%; height: 23%; z-index: -1; background-color: rgb(3, 82, 201);"></div><div style="position: absolute; left: 0px; top: 80%; width: 100%; height: 21%; z-index: -1; background-color: rgb(3, 81, 200);"></div><div style="position: absolute; left: 0px; top: 82%; width: 100%; height: 19%; z-index: -1; background-color: rgb(3, 80, 199);"></div><div style="position: absolute; left: 0px; top: 84%; width: 100%; height: 17%; z-index: -1; background-color: rgb(2, 78, 197);"></div><div style="position: absolute; left: 0px; top: 86%; width: 100%; height: 15%; z-index: -1; background-color: rgb(2, 77, 196);"></div><div style="position: absolute; left: 0px; top: 88%; width: 100%; height: 13%; z-index: -1; background-color: rgb(2, 76, 195);"></div><div style="position: absolute; left: 0px; top: 90%; width: 100%; height: 11%; z-index: -1; background-color: rgb(1, 74, 193);"></div><div style="position: absolute; left: 0px; top: 92%; width: 100%; height: 9%; z-index: -1; background-color: rgb(1, 73, 192);"></div><div style="position: absolute; left: 0px; top: 94%; width: 100%; height: 7%; z-index: -1; background-color: rgb(1, 72, 191);"></div><div style="position: absolute; left: 0px; top: 96%; width: 100%; height: 5%; z-index: -1; background-color: rgb(0, 70, 189);"></div><div style="position: absolute; left: 0px; top: 98%; width: 100%; height: 3%; z-index: -1; background-color: rgb(0, 69, 188);"></div><div style="position: absolute; left: 0px; top: 100%; width: 100%; height: 1%; z-index: -1; background-color: rgb(0, 68, 187);"></div></div>
-<div id="mainMenu" role="navigation" refresh="content" tiddler="MainMenu"><a tiddlylink="GettingStarted" refresh="link" class="tiddlyLink tiddlyLinkNonExisting shadow" title="This shadow tiddler provides basic usage instructions" href="javascript:;">GettingStarted</a></div>
-<div id="sidebar">
-<div id="sidebarOptions" role="navigation" refresh="content" tiddler="SideBarOptions"><a class="searchButton" title="Search this TiddlyWiki" href="javascript:;">search</a><input placeholder="" lastsearchtext="" autocomplete="off" accesskey="F" size="15" class="txtOptionInput searchField" type="text"><a class="button" title="Close all displayed tiddlers (except any that are being edited)" href="javascript:;">close all</a><a class="button" title="Link to an URL that retrieves all the currently displayed tiddlers" href="javascript:;">permaview</a><a newtemplate="2" newfocus="title" isjournal="false" newtitle="New Tiddler" accesskey="N" class="button" title="Create a new tiddler" href="javascript:;">new tiddler</a><a newtemplate="2" newfocus="text" params="journal" isjournal="true" newtitle="DD MMM YYYY" accesskey="J" class="button" title="Create a new tiddler from the current date and time" href="javascript:;">new journal</a><a accesskey="S" class="button" title="Save all tiddlers to create a new TiddlyWiki" href="javascript:;">save changes</a><a class="button" title="Change TiddlyWiki advanced options" href="javascript:;">options »</a><div tiddler="OptionsPanel" refresh="content" style="display: block;" cookie="chkSliderOptionsPanel" class="sliderPanel">These <a tiddlylink="InterfaceOptions" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'InterfaceOptions' doesn't yet exist" href="javascript:;">InterfaceOptions</a> for customising <a tiddlylink="TiddlyWiki" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'TiddlyWiki' doesn't yet exist" href="javascript:;">TiddlyWiki</a> are saved in your browser<br><br>Your username for signing your edits. Write it as a <a tiddlylink="WikiWord" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'WikiWord' doesn't yet exist" href="javascript:;">WikiWord</a> (eg <a tiddlylink="JoeBloggs" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'JoeBloggs' doesn't yet exist" href="javascript:;">JoeBloggs</a>)<br><br><input value="Aaron Liu" title="Username for signing your edits" class="txtOptionInput" option="txtUserName"><br><input checked="checked" title="Keep backup file when saving changes" class="chkOptionInput" option="chkSaveBackups" type="checkbox"> <a tiddlylink="SaveBackups" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'SaveBackups' doesn't yet exist" href="javascript:;">SaveBackups</a><br><input title="Automatically save changes" class="chkOptionInput" option="chkAutoSave" type="checkbox"> <a tiddlylink="AutoSave" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'AutoSave' doesn't yet exist" href="javascript:;">AutoSave</a><br><input title="Enable regular expressions for searches" class="chkOptionInput" option="chkRegExpSearch" type="checkbox"> <a tiddlylink="RegExpSearch" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'RegExpSearch' doesn't yet exist" href="javascript:;">RegExpSearch</a><br><input title="Case-sensitive searching" class="chkOptionInput" option="chkCaseSensitiveSearch" type="checkbox"> <a tiddlylink="CaseSensitiveSearch" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'CaseSensitiveSearch' doesn't yet exist" href="javascript:;">CaseSensitiveSearch</a><br><input checked="checked" title="Enable animations" class="chkOptionInput" option="chkAnimate" type="checkbox"> <a tiddlylink="EnableAnimations" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'EnableAnimations' doesn't yet exist" href="javascript:;">EnableAnimations</a><br><br><hr>Also see <a tiddlylink="AdvancedOptions" refresh="link" class="tiddlyLink tiddlyLinkNonExisting shadow" title="This shadow tiddler provides access to several advanced options" href="javascript:;">AdvancedOptions</a><br></div></div>
-<div id="sidebarTabs" role="complementary" refresh="content" force="true" tiddler="SideBarTabs"><div class="tabsetWrapper txtMainTab"><div cookie="txtMainTab" class="tabset"><a content="TabTimeline" tab="Timeline" class="tab tabUnselected" title="Timeline" href="javascript:;">Timeline<span style="font-size:0pt;line-height:0px"> </span></a><a content="TabAll" tab="All" class="tab tabUnselected" title="All tiddlers" href="javascript:;">All<span style="font-size:0pt;line-height:0px"> </span></a><a content="TabTags" tab="Tags" class="tab tabUnselected" title="All tags" href="javascript:;">Tags<span style="font-size:0pt;line-height:0px"> </span></a><a content="TabMore" tab="More" class="tab tabSelected" title="More lists" href="javascript:;">More<span style="font-size:0pt;line-height:0px"> </span></a></div><div class="tabContents"><div class="tabsetWrapper txtMoreTab"><div cookie="txtMoreTab" class="tabset"><a content="TabMoreMissing" tab="Missing" class="tab tabSelected" title="Missing tiddlers" href="javascript:;">Missing<span style="font-size:0pt;line-height:0px"> </span></a><a content="TabMoreOrphans" tab="Orphans" class="tab tabUnselected" title="Orphaned tiddlers" href="javascript:;">Orphans<span style="font-size:0pt;line-height:0px"> </span></a><a content="TabMoreShadowed" tab="Shadowed" class="tab tabUnselected" title="Shadowed tiddlers" href="javascript:;">Shadowed<span style="font-size:0pt;line-height:0px"> </span></a></div><div class="tabContents"><ul class="list list-missing" macroname="list" refresh="macro"><li class="listTitle">Tiddlers that have links to them but are not defined</li></ul></div></div></div></div></div>
-</div>
-<div id="displayArea" role="main">
-<div id="messageArea"></div>
-<div id="tiddlerDisplay"><div dirty="false" template="ViewTemplate" tiddler="25 July 2013" tags="journal" refresh="tiddler" id="tiddler25_July_2013" class="tiddler"><!--{{{-->
-<div class="toolbar" role="navigation"><a tiddler="25 July 2013" commandname="closeTiddler" class="button command_closeTiddler" title="Close this tiddler" href="javascript:;">close</a><a tiddler="25 July 2013" commandname="closeOthers" class="button command_closeOthers" title="Close all other tiddlers" href="javascript:;">close others</a><a tiddler="25 July 2013" commandname="editTiddler" class="button command_editTiddler defaultCommand" title="Edit this tiddler" href="javascript:;">edit</a><a class="button moreCommand" title="Show additional commands" href="javascript:;">more</a><span style="display: none;" class="moreCommand"><a tiddler="25 July 2013" commandname="fields" class="button command_fields" title="Show the extended fields of this tiddler" href="javascript:;">fields</a><a tiddler="25 July 2013" commandname="syncing" class="button command_syncing" href="javascript:;"></a><a tiddler="25 July 2013" commandname="permalink" class="button command_permalink" title="Permalink for this tiddler" href="javascript:;">permalink</a><a tiddler="25 July 2013" commandname="references" class="button command_references" title="Show tiddlers that link to this one" href="javascript:;">references</a><a tiddler="25 July 2013" commandname="jump" class="button command_jump" title="Jump to another open tiddler" href="javascript:;">jump</a></span></div>
-<div class="title">25 July 2013</div>
-<div class="subtitle"><span><a tiddlylink="Aaron Liu" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'Aaron Liu' doesn't yet exist" href="javascript:;">Aaron Liu</a></span>, <span>25 July 2013</span> (<span>created</span> <span>25 July 2013</span>)</div>
-<div class="tagging"><ul title="List of tiddlers tagged with '25 July 2013'"><li class="listTitle">not tagging</li></ul></div>
-<div class="tagged"><ul><li class="listTitle">tags: </li><li><a tiddler="25 July 2013" tag="journal" class="button" title="Show tiddlers tagged with 'journal'" href="javascript:;">journal</a></li></ul></div>
-<div class="viewer">Type the text for '25 July 2013'</div>
-<div class="tagClear"></div>
-<!--}}}-->
-</div><div template="ViewTemplate" tiddler="GettingStarted" tags="" refresh="tiddler" id="tiddlerGettingStarted" class="tiddler shadow selected"><!--{{{-->
-<div class="toolbar" role="navigation"><a tiddler="GettingStarted" commandname="closeTiddler" class="button command_closeTiddler" title="Close this tiddler" href="javascript:;">close</a><a tiddler="GettingStarted" commandname="closeOthers" class="button command_closeOthers" title="Close all other tiddlers" href="javascript:;">close others</a><a tiddler="GettingStarted" commandname="editTiddler" class="button command_editTiddler defaultCommand" title="Edit this tiddler" href="javascript:;">edit</a><a class="button moreCommand" title="Show additional commands" href="javascript:;">more</a><span style="display: none;" class="moreCommand"><a tiddler="GettingStarted" commandname="fields" class="button command_fields" title="Show the extended fields of this tiddler" href="javascript:;">fields</a><a tiddler="GettingStarted" commandname="syncing" class="button command_syncing" href="javascript:;"></a><a tiddler="GettingStarted" commandname="permalink" class="button command_permalink" title="Permalink for this tiddler" href="javascript:;">permalink</a><a tiddler="GettingStarted" commandname="references" class="button command_references" title="Show tiddlers that link to this one" href="javascript:;">references</a><a tiddler="GettingStarted" commandname="jump" class="button command_jump" title="Jump to another open tiddler" href="javascript:;">jump</a></span></div>
-<div class="title">GettingStarted</div>
-<div class="subtitle"><span><a tiddlylink="(built-in shadow tiddler)" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler '(built-in shadow tiddler)' doesn't yet exist" href="javascript:;">(built-in shadow tiddler)</a></span>, <span>23 June 2013</span> (<span>created</span> <span>23 June 2013</span>)</div>
-<div class="tagging"><ul title="List of tiddlers tagged with 'GettingStarted'"><li class="listTitle">not tagging</li></ul></div>
-<div class="tagged"><ul><li class="listTitle">no tags</li></ul></div>
-<div class="viewer">To get started with this blank <a tiddlylink="TiddlyWiki" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'TiddlyWiki' doesn't yet exist" href="javascript:;">TiddlyWiki</a>, you'll need to modify the following tiddlers:<br><ul><li> <a tiddlylink="SiteTitle" refresh="link" class="tiddlyLink tiddlyLinkNonExisting shadow" title="This shadow tiddler is used as the first part of the page title" href="javascript:;">SiteTitle</a> &amp; <a tiddlylink="SiteSubtitle" refresh="link" class="tiddlyLink tiddlyLinkNonExisting shadow" title="This shadow tiddler is used as the second part of the page title" href="javascript:;">SiteSubtitle</a>: The title and subtitle of the site, as shown above (after saving, they will also appear in the browser title bar)</li><li> <a tiddlylink="MainMenu" refresh="link" class="tiddlyLink tiddlyLinkNonExisting shadow" title="This shadow tiddler is used as the contents of the main menu in the left-hand column of the screen" href="javascript:;">MainMenu</a>: The menu (usually on the left)</li><li> <a tiddlylink="DefaultTiddlers" refresh="link" class="tiddlyLink tiddlyLinkNonExisting shadow" title="The tiddlers listed in this shadow tiddler will be automatically displayed when ~TiddlyWiki starts up" href="javascript:;">DefaultTiddlers</a>: Contains the names of the tiddlers that you want to appear when the <a tiddlylink="TiddlyWiki" refresh="link" class="tiddlyLink tiddlyLinkNonExisting" title="The tiddler 'TiddlyWiki' doesn't yet exist" href="javascript:;">TiddlyWiki</a> is opened</li></ul>You'll also need to enter your username for signing your edits: <input value="Aaron Liu" title="Username for signing your edits" class="txtOptionInput" option="txtUserName"><br></div>
-<div class="tagClear"></div>
-<!--}}}-->
-</div></div>
-</div>
-<!--}}}-->
-</div>
+<div id="contentWrapper"></div>
 <div id="contentStash"></div>
 <div id="shadowArea">
 <div title="ColorPalette">
@@ -10408,6 +10062,5 @@ if(useJavaSaver)
 <!--POST-SCRIPT-START-->
 
 <!--POST-SCRIPT-END-->
-
-
-</body></html>
+</body>
+</html>
