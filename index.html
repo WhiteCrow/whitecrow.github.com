@@ -46,7 +46,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> Aaron Liu's Wiki -   Hi, my name is Aaron Liu. I'm Chinese. My Chinese name is 刘思昊. This is my personal Wiki that meant to share with you those common technical problems and My picture in your work or your life, especially in web related development. I am mainly working on Ruby on Rails related projects. </title>
+<title> Aaron Liu's Wiki -   Hi, my name is Aaron Liu. I'm Chinese. My Chinese name is 刘思昊. This is my personal Wiki that meant to share with you those common technical problems and My picture in your work or your life, especially in web related development. I am mainly working on Ruby on Rails related projects.‘’除(转载)和(zz)标记外，wiki其它内容皆为本人原创‘’ </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -530,7 +530,12 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 <div title="AdvancedOptions" creator="Aaron" modifier="Aaron" created="201307250528" changecount="1">
 <pre>&lt;&lt;options&gt;&gt;</pre>
 </div>
-<div title="DefaultTiddlers" creator="YourName" modifier="YourName" created="201307250525" modified="201307250633" changecount="4">
+<div title="Business" creator="YourName" modifier="YourName" created="201307280307" modified="201307280308" changecount="2">
+<pre>[[有关创业的一些资料(zz)]]
+
+[[雕爷：创业公司如何管理员工(zz)]]</pre>
+</div>
+<div title="DefaultTiddlers" creator="YourName" modifier="YourName" created="201307250525" modified="201307280247" changecount="6">
 <pre>[[Study Resources]]
 
 [[Thinking and study]]
@@ -562,6 +567,17 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 You'll also need to enter your username for signing your edits: &lt;&lt;option txtUserName&gt;&gt;
 </pre>
 </div>
+<div title="Grammar" creator="YourName" modifier="YourName" created="201307280246" changecount="1">
+<pre>*[[标题]]
+*[[文字格式]]
+*[[等宽文字]]
+*[[引言区块]]
+*[[列表]]
+*[[表格]]
+*[[水平线]]
+*[[外部连接]]
+*[[显示图片]]</pre>
+</div>
 <div title="How update gems in ruby project ?" creator="YourName" modifier="YourName" created="201307250552" changecount="1">
 <pre>How update gems in ruby project?
 
@@ -581,17 +597,19 @@ You'll also need to enter your username for signing your edits: &lt;&lt;option t
  
 [[昙华林]]</pre>
 </div>
-<div title="MainMenu" creator="Aaron" modifier="YourName" created="201307250354" modified="201307261015" changecount="12">
-<pre>''IT''
+<div title="MainMenu" creator="Aaron" modifier="YourName" created="201307250354" modified="201307280323" changecount="22">
+<pre>!!!IT
 [[Unix &amp; Linux]]
 [[Ruby and Rails]]
 [[Javascript]]
 [[Lisp]]
+[[Programing paradigm]]
 [[Thinking and study]]
 
-''Others''
+!!!Others
 [[Study Resources]]
 [[Finance]]
+[[Business]]
 [[Psychology]]
 [[Math]]
 [[Novels]]
@@ -599,7 +617,8 @@ You'll also need to enter your username for signing your edits: &lt;&lt;option t
 [[Draw]]
 [[Life]]
  
-''Settings''
+!!!Settings
+[[Grammar]]
 [[MainMenu]]
 [[SiteTitle]]
 [[SiteSubtitle]]
@@ -662,13 +681,17 @@ end
 &lt;/pre&gt;
 &lt;/html&gt;</pre>
 </div>
+<div title="Programing paradigm" creator="YourName" modifier="YourName" created="201307280313" modified="201307280323" changecount="2">
+<pre>[[类型的本质和函数式实现(zz)]]</pre>
+</div>
 <div title="Psychology" creator="YourName" modifier="YourName" created="201307261000" modified="201307261018" changecount="3">
 <pre> 
 [[The 100+ most followed psychologists and neuroscientists on Twitter ]]
 </pre>
 </div>
-<div title="Ruby and Rails" creator="YourName" modifier="YourName" created="201307250551" modified="201307250621" changecount="8">
-<pre> 
+<div title="Ruby and Rails" creator="YourName" modifier="YourName" created="201307250551" modified="201307280305" changecount="9">
+<pre>[[Ruby解释器学习笔记]]
+ 
 [[How update gems in ruby project ?]]
  
 [[在rails中创建嵌套表单(nested form)]]
@@ -715,6 +738,101 @@ bar
 
 return范围
 在一个方法内使用Proc/lambda时，在bar方法中，如果Proc内包含了return，则执行到Proc内的return就不再往下执行。换言之，proc的return是作用于整个方法的。 而在bar方法中，lambda的return将不会影响方法的继续执行，lambda的return仅仅作用于代码块的内部。</pre>
+</div>
+<div title="Ruby解释器学习笔记" creator="YourName" modifier="YourName" created="201307280305" changecount="1">
+<pre>前置知识：
+常用编译器/解释器开发工具：Lex，Yacc，Bison
+
+1，Yacc，和是Unix/Linux上一个用来生成编译器的编译器，是一个parser（语法解析器）。
+
+2，GNU bison是一个parser generator，维基百科解释：
+     GNU bison, commonly known as Bison, is a parser generator that is part of the GNU Project. Bison reads a specification of a context-free language, warns about any parsing ambiguities, and generates a parser (either in C, C++, or Java) which reads sequences of tokens and decides whether the sequence conforms to the syntax specified by the grammar. Bison by default generates LALR parsers but can also create GLR parsers.[2]
+     In POSIX mode, Bison is compatible with yacc, but also supports several improvements over this earlier program. flex, an automatic lexical analyser, is often used with Bison, to tokenise input data and provide Bison with tokens。Bison, Yacc and other parser generators require you to express your grammar rulesusing “Backus–Naur Form” (BNF) notation（巴科斯范式表示法。它能表示一部分自然语言的语法，它还是更广泛地使用于程序设计语言、指令集、通信协议的语法表示中）.
+      巴科斯范式拓展阅读：http://en.wikipedia.org/wiki/Backus_Normal_Form ftp://ftp.rfc-editor.org/in-notes/rfc4234.txt
+
+3，Lex is a computer program that generates lexical analyzers (&quot;scanners&quot; or &quot;lexers&quot;).Lex通常用于Tokenization。
+ 
+     不过Ruby没有使用Lex，而是手写了一个词法分析器。因为Lex并不支持某些Ruby的tokenization规则。同时，Ruby uses an LALR parser generator called Bison. The most widely used and well known parser generator is called Yacc (“Yet Another Compiler Compiler”), but Ruby instead uses a newer version of Yacc called Bison, part of the GNU project.
+Section 1：Tokenization, Parsing and Compilation
+
+     First, Ruby tokenizes your code. During this first step, Ruby reads the text characters in your code file and converts them into tokens. Think of tokens as the words that are used in the Ruby language. In the next step, Ruby parses these tokens; “parsing” means to group the tokens into meaningful Ruby statements. This is analogous to grouping words into sentences. Finally, Ruby compiles these statements or sentences into low level instructions that Ruby can execute later using a virtual machine.
+
+     1)What is Tokenize（符号化）
+          Tokens are the words that make up the Ruby language.
+          符号化就是给代码赋予意义，符号化之前，代码就是个单纯的字符串，是没什么意义的，但符号化之后，代码被分为了一个个词，每个词都有它的类型。所以符号化分为三步：1）给一个.rb文件分行，2）给每行代码分词，3）给词分类。
+
+     2)Tokenize and Parsing
+          As a simplification I’m describing tokenization as an independent process; in fact, the parsing engine I describe in the next section calls this C tokenize code whenever it needs a new token. Tokenization and parsing are two separate processes that actually happen at the same time.
+ 
+         动态语言的特征也许就是：Tokenization and parsing are two separate processes that actually happen at the same time.（不确定）
+ 
+     3)Ruby中的几类常见Token
+          句号：. (Period)
+          竖杠：|
+          tInterger，整数，比如10
+          tIDENTIFIER，标识符，usually they refer to variable, method or class names.比如&quot;times&quot;
+          keyword_do，保留字，比如do
+          
+     4)Tokenization源代码：
+          https://github.com/ruby/ruby/blob/trunk/parse.y （Yacc Bison文件）第754行：
+          %token &lt;id&gt; tIDENTIFIER tFID tGVAR tIVAR tCONSTANT tCVAR tLABEL 
+    %token &lt;node&gt; tINTEGER tFLOAT tSTRING_CONTENT tCHAR
+    %token &lt;node&gt; tNTH_REF tBACK_REF 
+     %token &lt;num&gt; tREGEXP_END
+
+          6852 line：parser_yylex，This complex C function contains the code that does the actual work of tokenizing your code.  
+          6885 line :retry
+          https://github.com/ruby/ruby/blob/trunk/defs/keywords 文件：保留字
+          https://github.com/ruby/ruby/blob/trunk/defs/lex.c.src ：#define rb_reserved_word(str, len) reserved_word(str, len)
+
+          Experiment 1-1: Using Ripper to tokenize different Ruby scripts
+
+                the Ripper class allows you to call the same tokenize and parse code that Ruby itself uses to process the text from code files.
+                我的代码地址：https://github.com/WhiteCrow/learn_ruby_internals/blob/master/lex1.rb https://github.com/WhiteCrow/learn_ruby_internals/blob/master/lex3.rb
+                Finally, notice that Ripper has no idea whether the code you give it is valid Ruby or not. If I pass in code that contains a syntax error, Ripper will just tokenize it as usual and not complain. It’s the parser's job to check syntax, which I’ll get to in the next section.
+ 
+          1.2 Parsing: how Ruby understands the code you write
+                Now that Ruby has converted your code into a series of tokens, what does it do next? the next step on your code’s journey through Ruby is called “parsing,” which is the process for grouping the words or tokens into sentences or phrases that make sense to Ruby.           
+                The parse.y file is really the heart and soul of Ruby – it is where the language itself is actually defined!
+
+ 
+                Using the Bison/Yacc grammar rule syntax – the “Backus–Naur” notation – I can write a simple grammar rule like this with the rule name on the left, and the matching tokens on the right:
+                LALR parser 如何工作，它为什么被称之为LALR parser？
+
+                    “Look Ahead LR parser.” We’ll get to the “Look Ahead” part in a minute, but let’s start with “LR:”
+                    • “L” (left) means the parser moves from left to right while processing the token stream; in my example this would be: le, gusta, el, ruby.
+                    • “R” (reversed rightmost derivation) means the parser uses a bottom up strategy for finding matching grammar rules, by using a shift/reduce technique.
+                    分为3步。
+                     1，建立Rule：
+                           SheLikes: le gusta {
+                                 $$ = &quot;She likes&quot;;
+                            }
+                            VerbAndObject: SheLikes | ILike {
+                                 $$ = $1;
+                             }
+                     2，从左边第一个字母开始推送Token：(推送的步骤称为shift)
+                           Grammar Rule | Stack Tokens
+                                                le | gusta el ruby
+                     3，匹配Rule，如果不匹配，则继续推送：
+                           Grammar Rule | Stack Tokens
+                                      le gusta | el ruby
+                     4，匹配Rule：(匹配并转变的步骤称为reduce)
+                           Grammar Rule | Stack Tokens
+                                    SheLikes | el ruby
+                     5，继续匹配Rule
+                           Grammar Rule | Stack Tokens
+                           VerbAndObject | el ruby
+                     But let’s stop for a moment and think about this a bit more carefully. How did the parser, know to reduce and not continue to shift tokens? And if it reduces, how does it decide which grammar rule to reduce with?
+                     Here’s where the “LA” (Look Ahead) portion of LALR comes in: in order to find the proper matching rule it looks ahead at the next token:
+                            Grammar Rule | Stack Tokens
+                                      le gusta --&gt; el ruby ( --&gt; mean Look Ahead)
+
+
+                     Inside the Ruby parse.y source code file, you’ll see hundreds of rules that define the structure and syntax of the Ruby language. There are parent and child rules, and the child rules return values the parent rules can refer to in exactly the same way, using the $$, $1, $2, etc. symbols.
+
+
+
+ </pre>
 </div>
 <div title="Ruby里yeild和block的用法" creator="YourName" modifier="YourName" created="201307250601" changecount="1">
 <pre>Ruby里yeild和&amp;block的用法
@@ -776,28 +894,27 @@ box.is_done(&quot;bird&quot;){ &quot;open&quot; }
 &lt;/pre&gt;
 &lt;/html&gt;</pre>
 </div>
-<div title="SiteSubtitle" creator="Aaron" modifier="YourName" created="201307250354" modified="201307250550" changecount="9">
+<div title="SiteSubtitle" creator="Aaron" modifier="YourName" created="201307250354" modified="201307280310" changecount="12">
 <pre> 
  
 Hi, my name is Aaron Liu. I'm Chinese. My Chinese name is 刘思昊. 
 This is my personal Wiki that meant to share with you those common technical problems and My picture in your work or your life, especially in web related development. 
 I am mainly working on Ruby on Rails related projects.
 
-
+‘’除(转载)和(zz)标记外，wiki其它内容皆为本人原创‘’
 
 </pre>
 </div>
 <div title="SiteTitle" creator="YourName" modifier="YourName" created="201307250515" changecount="1">
 <pre>Aaron Liu's Wiki</pre>
 </div>
-<div title="Study Resources" creator="YourName" modifier="YourName" created="201307250632" modified="201307260959" changecount="27">
+<div title="Study Resources" creator="YourName" modifier="YourName" created="201307250632" modified="201307280240" changecount="30">
 <pre>*[[Railscasts免费视频下载|https://gist.github.com/samqiu/1472142]] 
 *[[Tiddly Wiki使用教学中文版|http://web.nlhs.tyc.edu.tw/~lss/wiki/TiddlyWikiTutorialTW.html]]
 *[[Code School code TV|http://www.codeschool.com/code_tv]]</pre>
 </div>
 <div title="The 100+ most followed psychologists and neuroscientists on Twitter" creator="YourName" modifier="YourName" created="201307261018" changecount="1">
-<pre>
-Here are the 100+ most followed psychologists and neuroscientists on Twitter based on follower counts recorded over the last few weeks. If we've missed anyone who should be here, please let us know via comments and we'll add them in. This is an update to our September 2011 post &quot;Psychologists who Tweet &quot;. Check the comments to that earlier post for even more psychologists on Twitter than we were able to include here.
+<pre>Here are the 100+ most followed psychologists and neuroscientists on Twitter based on follower counts recorded over the last few weeks. If we've missed anyone who should be here, please let us know via comments and we'll add them in. This is an update to our September 2011 post &quot;Psychologists who Tweet &quot;. Check the comments to that earlier post for even more psychologists on Twitter than we were able to include here.
 
 Kiki Sanford . Neurophysiologist turned sci communicator. Followers: 150106
 Richard Wiseman . Psychologist, blogger and author. Followers: 121261
@@ -973,6 +1090,9 @@ Thanks to Emma Smith for help with compiling the update.
 [[Vim]]
 [[Git]]</pre>
 </div>
+<div title="Vim" creator="YourName" modifier="YourName" created="201307280254" changecount="1">
+<pre>[[vim字符串替换(zz)]]</pre>
+</div>
 <div title="i美股：美国另一位94岁股神的投资思想作者：理想便宜" creator="YourName" modifier="YourName" created="201307261005" changecount="1">
 <pre>Walter Schloss 
 　　他不是很多人眼中的股神，但他是“股神”眼中最伟大的投资人之一。他曾经为价值投资之父，也是巴菲特的老师Ben Graham，工作将近十年。自立门户后一直坚持独立投资，直到今天，对，94了，他还在价值投资。　　 巴菲特2006年致股东信，专门重点讲到Walter Schloss 
@@ -1044,6 +1164,59 @@ Test.instance_eval_test
 #=&gt;NoMethodError: undefined method `instance_eval_test' for #&lt;Class:0x00000002a84df8&gt;::Test
 &lt;/pre&gt;
 &lt;/html&gt;</pre>
+</div>
+<div title="vim字符串替换(zz)" creator="YourName" modifier="YourName" created="201307280254" modified="201307280304" changecount="16">
+<pre>vi/vim 中可以使用 :s 命令来替换字符串。以前只会使用一种格式来全文替换，今天发现该命令有很多种写法(vi 真是强大啊，还有很多需要学习)，记录几种在此，方便以后查询。
+{{{
+:s/vivian/sky/ 替换当前行第一个 vivian 为 sky
+:s/vivian/sky/g 替换当前行所有 vivian 为 sky
+:n,$s/vivian/sky/ 替换第 n 行开始到最后一行中每一行的第一个 vivian 为 sky
+:n,$s/vivian/sky/g 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky
+
+n 为数字，若 n 为 .，表示从当前行开始到最后一行
+:%s/vivian/sky/(等同于 :g/vivian/s//sky/) 替换每一行的第一个 vivian 为 sky
+:%s/vivian/sky/g(等同于 :g/vivian/s//sky/g) 替换每一行中所有 vivian 为 sky
+
+可以使用 # 作为分隔符，此时中间出现的 / 不会作为分隔符
+:s#vivian/#sky/# 替换当前行第一个 vivian/ 为 sky/
+ :%s+/oradata/apras/+/user01/apras1+ (使用+ 来 替换 / )： /oradata/apras/替换成/user01/apras1/
+
+1.:s/vivian/sky/ 替换当前行第一个 vivian 为 sky
+   :s/vivian/sky/g 替换当前行所有 vivian 为 sky
+
+2. :n,$s/vivian/sky/ 替换第 n 行开始到最后一行中每一行的第一个 vivian 为 sky
+   :n,$s/vivian/sky/g 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky
+   (n 为数字，若 n 为 .，表示从当前行开始到最后一行)
+
+3. :%s/vivian/sky/(等同于 :g/vivian/s//sky/) 替换每一行的第一个 vivian 为 sky
+   :%s/vivian/sky/g(等同于 :g/vivian/s//sky/g) 替换每一行中所有 vivian 为 sky
+
+4. 可以使用 # 作为分隔符，此时中间出现的 / 不会作为分隔符
+   :s#vivian/#sky/# 替换当前行第一个 vivian/ 为 sky/
+
+5. 删除文本中的^M
+   问题描述：对于换行,window下用回车换行(0A0D)来表示，linux下是回车(0A)来表示。这样，将window上的文件拷到unix上用时，总会有个^M.请写个用在unix下的过滤windows文件的换行符(0D)的shell或c程序。
+
+#使用命令：cat filename1 | tr -d “^V^M” &gt;newfile;
+#使用命令：sed -e “s/^V^M//” filename &gt;outputfilename。需要注意的是在1、2两种方法中，^V和^M指的是Ctrl+V和Ctrl+M。你必须要手工进行输入，而不是粘贴。
+#在vi中处理：首先使用vi打开文件，然后按ESC键，接着输入命令：%s/^V^M//。
+#:%s/^M$//g
+　　如果上述方法无用，则正确的解决办法是：
+　· tr -d &quot;r&quot; dest
+　　· tr -d &quot;5&quot; dest
+　· strings A&gt;B
+
+6. 其它
+   利用 :s 命令可以实现字符串的替换。具体的用法包括：
+   :s/str1/str2/ 用字符串 str2 替换行中首次出现的字符串 str1
+   :s/str1/str2/g 用字符串 str2 替换行中所有出现的字符串 str1
+   :.,$ s/str1/str2/g 用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1
+   :1,$ s/str1/str2/g 用字符串 str2 替换正文中所有出现的字符串 str1
+   :g/str1/s//str2/g 功能同上
+   从上述替换命令可以看到：g 放在命令末尾，表示对搜索字符串的每次出现进行替换;不加 g，表示只对搜索
+字符串的首次出现进行替换;g 放在命令开头，表示对正文中所有包含搜索字符串的行进行替换操作。
+}}}
+本文来自ChinaUnix博客，如果查看原文请点：http://blog.chinaunix.net/u1/50685/showart_1072908.html </pre>
 </div>
 <div title="一些经济方面的参考资料" creator="YourName" modifier="YourName" created="201307261008" modified="201307261008" changecount="3">
 <pre> 
@@ -1164,6 +1337,34 @@ P.S.
 
 参考：《西游降魔篇》、《故事——材质、结构和银幕剧作的原理》、《你的剧本逊毙了》</pre>
 </div>
+<div title="列表" creator="YourName" modifier="YourName" created="201307280248" changecount="1">
+<pre>----
+*說明
+數列 用井字號#起始一行, 越多#號階層越低, 最後用一空白行結束
+
+----
+* 範例
+ #項目1
+ #項目2
+ ##項目2.1
+ ##項目2.2
+ #項目3
+ ##項目3.1
+ ###項目3.1.1
+
+----
+*顯示
+
+#項目1
+#項目2
+##項目2.1
+##項目2.2
+#項目3
+##項目3.1
+###項目3.1.1
+
+----</pre>
+</div>
 <div title="在rails中创建嵌套表单(nested form)" creator="YourName" modifier="YourName" created="201307250554" modified="201307250556" changecount="5">
 <pre>首先处理需要嵌套表单相关的model，在这里我们是用tile来嵌套attachment，所以model的代码分别是:
 &lt;html&gt;
@@ -1203,6 +1404,32 @@ P.S.
 
 代码中的builder.check_box :_destroy 被勾选后会自动生成一些参数给params[:tile]去删除attachments参数类似a于&quot;tile&quot; =&gt; {&quot;attachments_attributes&quot;=&gt;{&quot;0&quot;=&gt;{&quot;_destroy&quot;=&gt;&quot;1&quot;, &quot;id&quot;=&gt;&quot;54&quot;}}。
 当参数传递给tile.update_attributes后就会自动删除被勾选的attribute了。这就是在rails中构建嵌套表单的方式了。</pre>
+</div>
+<div title="外部连接" creator="YourName" modifier="YourName" created="201307280249" changecount="1">
+<pre>----
+*說明
+要連結到外部網址，可以直接輸入原來的網址，系統會自動擷取。
+或者是用下列的格式去處理：
+
+----
+*範例
+{{{http}}}://www.tiddly.com
+{{{[[}}}一般網址|{{{http}}}://www.tiddly.com{{{]]}}}
+{{{[[}}}相對網址|path/filen{{{]]}}}
+{{{[[}}}Windows 的網路芳鄰|file://server/share/folder/path/file{{{]]}}}
+{{{[[}}}Windows 的本機檔案|file:///c:/path/file{{{]]}}}
+{{{[[}}}Unix-style 的本機檔案|file:///path/file{{{]]}}}
+
+----
+*顯示
+http://www.tiddly.com
+[[一般網址|http://www.tiddly.com]]
+[[相對網址|path/filename]]
+[[Windows 的網路芳鄰|file://server/share/path/file]]
+[[Windows 的本機檔案|file:///c:/path/file]]
+[[Unix-style 的本機檔案|file:///path/file]]
+
+----</pre>
 </div>
 <div title="如何对某一点知识进行深入学习——从《程序员的思维修炼》中SQ3R阅读法想到的" creator="YourName" modifier="YourName" created="201307250545" modified="201307250545" tags="journal" changecount="2">
 <pre>Andy Hunt在《程序员的思维修炼》中谈到一个学习方法，这个方法的想要达到的目的是“为解决问题而阅读”。我觉得有必要分享一下，该方法叫做SQ3R阅读。SQ3R是具体阅读步骤的首字母缩写：
@@ -1300,6 +1527,31 @@ P.S.
 迭代和收尾
 
 经过这四步骤，你会发现一部小说该有东西你都有了，而且看起来还很优秀。那么不断迭代这四步吧，直到小说的完成。在最后收尾时，稍加修饰即可，某个错别字，某个不和谐的用词等待。</pre>
+</div>
+<div title="引言区块" creator="YourName" modifier="YourName" created="201307280248" modified="201307280248" changecount="2">
+<pre>----
+*說明
+#以一個大於符號&gt;起始一行, 越多&gt;以決定階層數
+
+----
+*範例二
+
+ &gt;階層 1
+ &gt;&gt;階層 2
+ &gt;&gt;&gt;階層 3
+ &gt;&gt;階層 2
+ &gt;階層 1
+
+----
+*顯示二
+
+&gt;階層 1
+&gt;&gt;階層 2
+&gt;&gt;&gt;階層 3
+&gt;&gt;階層 2
+&gt;階層 1
+----
+</pre>
 </div>
 <div title="我所知道的金融数据库" creator="YourName" modifier="YourName" created="201307261012" changecount="1">
 <pre>2012-01-02 21:47:29
@@ -1528,6 +1780,36 @@ Post-Doc 4: （博士后4）
 　　- Letters to Shareholders: Charlie Munger (芒格致股东的信) 
 　　- Bershire Hathaway Owners Manual（伯克夏所有者手册）, Buffet （以上三个见伯克夏网站) 
 　　- The Dark Side of Valuation(深入价值评估), Damodaran</pre>
+</div>
+<div title="文字格式" creator="YourName" modifier="YourName" created="201307280247" changecount="1">
+<pre>----
+* 說明
+標記格式之文字，前後各連續兩個相同符號
+
+----
+*範例
+{{{''}}}粗體{{{''}}}
+{{{==}}}刪除線{{{==}}} 
+{{{__}}}底線{{{__}}}
+{{{//}}}斜體{{{//}}}
+上標 2{{{^^}}}3{{{^^}}}=8
+下標 a{{{~~ij~~}}} = -a{{{~~}}}ji{{{~~}}}
+{{{@@}}}強調{{{@@}}}
+{{{@@color(red):}}}前景顏色{{{@@}}}
+{{{@@bgcolor(red):}}}背景顏色{{{@@}}}
+
+----
+*顯示
+''粗體''
+==刪除線==
+__底線__
+//斜體//
+上標 2^^3^^=8
+下標 a~~ij~~ = -a~~ji~~
+@@強調@@
+@@color(red):前景顏色@@
+@@bgcolor(red):背景顏色@@
+----</pre>
 </div>
 <div title="旗手与旅人" creator="YourName" modifier="YourName" created="201307250551" tags="journal" changecount="1">
 <pre>很久前写的小说，太监了。
@@ -1803,6 +2085,21 @@ please be true.
 In other words,
 I love you.</pre>
 </div>
+<div title="显示图片" creator="YourName" modifier="YourName" created="201307280249" changecount="1">
+<pre>----
+*說明
+插入圖片[img[說明文字|檔案位置], 最後以]結束
+
+----
+*範例
+{{{[}}}img[logo|images/mptwlogosml.gif{{{]]}}}
+
+----
+*顯示
+[img[logo|images/mptwlogosml.gif]]
+
+----</pre>
+</div>
 <div title="最近的学习心得" creator="YourName" modifier="YourName" created="201307250559" tags="journal" changecount="1">
 <pre>我的计算机基础一直不是很好，但应用却都能做，很多人说“算法与数据结构”，“编译原理”之类的内功多么重要，但我认为在进行良好的工程训练之前，这种所谓的“重要”是难以习得的。在此之前，我认为真正的基本功应该是控制软件复杂度的能力（甚至可以说是经验带来的直觉）、refacting、版本控制、排错能力、测试等，再在这些保证构建复杂软件基础上去习得那些内功才是最更价值的。推荐博文有《习而时学之的》
 
@@ -1820,6 +2117,81 @@ I love you.</pre>
 
 我发现每次写这类博客和日志都能让我整理好过去，重新定位目标，为我提供激发前进的能量，虽然效果不大，但坚持下来一定会很有成效吧。
  </pre>
+</div>
+<div title="有关创业的一些资料(zz)" creator="YourName" modifier="YourName" created="201307280307" changecount="1">
+<pre>2013-05-17 13:53:19
+@峰哥何峰
+
+创了一次业后，更深刻体会了“知易行难”。有关创业的各种文章、书、视频、甚至Stanford的课程，我看过忒多了。本来以为已经了然于胸。但行动起来仍然差了很多。
+
+虽然如此，看过还是有好处的。以下是我所见过的，有关创业“知”的材料中比较好的。至于“行”的部分，诸君自己努力吧。
+
+1）Paul Graham. 他的所有文章 (essays)都值得反复读读。你可以在他的个人主页找到这些文章：
+http://www.paulgraham.com/articles.html 
+
+如果你时间紧迫，想找重点的来读，我推荐：
+how to get startup ideas: http://www.paulgraham.com/startupideas.html 
+startup = growth: http://www.paulgraham.com/growth.html 
+a word to the resourceful: http://www.paulgraham.com/word.html 
+how to do what you love: http://www.paulgraham.com/love.html 
+
+此外，他所经营的 Hacker News 也是了解最新技术、硅谷创业圈新闻的好地方:
+https://news.ycombinator.com 
+
+他创立的Y Combinator 是硅谷举足轻重的早期投资机构
+http://ycombinator.com 
+
+每年从YC毕业的创业团队几成硅谷风向标。
+
+
+2）Steve Blank 是Stanford的教授，本人曾创业。他最先提出了 Lean Startup 的概念，现在已经成为硅谷创业的主流思想。Blank最著名的一本书是“four steps to the epiphany”。该书1-3章由Stanford大学提供免费阅读：
+http://www.stanford.edu/group/e145/cgi-bin/winter/drupal/upload/handouts/Four_Steps.pdf 
+
+如果你没有耐心读书的话，Blank 在美国免费公开课平台 Udacity 开了一门课程 “how to build a startup”. 其中包含了他对创业的思想大成。一门课学习下来也就差不多了：
+https://www.udacity.com/course/ep245 
+
+Blank近期在Harvard Business Review 写了一篇文章，综述 lean startup，值得一读：
+
+http://hbr.org/2013/05/why-the-lean-start-up-changes-everything/ 
+
+2.5）把 Lean Startup 系统化并发扬光大的人物是 Eric Ries. 他曾经上过 Blank 的课程。Ries 的书 “the lean startup” http://book.douban.com/subject/6779576/ 
+
+
+3）哈佛商学院教授 Clayton Christensen 的书 “Innovator’s Dilemma” 据说是老乔生前唯一喜欢的商业书籍。Christensen 做过一个比喻：
+化学刚刚成为一门学科的时候，能够调制化学成分的都仿佛是艺术家，凭着自己的经验和感觉来工作。但随后人们对化学的理解逐渐完备，标准化，普通人只要按照标准方法做，也可以胜任化学工程师了。
+创业也类似。以前人们对创业的过程不熟悉，看那些创业、创新成功的人都仿佛是艺术家（比如老乔）。但当人们对创业成功失败的原因越来越清楚的时候，或许有更多的人，不需要老乔的才华横溢，也能够创业。
+除了他的书之外，如果你没有时间，可以看看他的这个讲座
+http://v.youku.com/v_show/id_XNTIzODQ4MTA4.html 
+
+
+4）有关创业的讲座视频太多了，就不一一列绝了。我最近印象很深的是 Airbnb 创始人/CEO 的这个长达2个多小时的访谈。此人真是一个讲故事高手，并有各种创业中的 insight. Airbnb 是Graham 麾下YC中孵化出来的最成功公司。他们的曲折创业经历足以 inspire!
+http://v.youku.com/v_show/id_XNTU0OTAzMTE2.html 
+
+
+先写这么多吧。以后再补充。
+举报 </pre>
+</div>
+<div title="标题" creator="YourName" modifier="YourName" created="201307280247" changecount="1">
+<pre>----
+* 說明
+標題 用驚嘆號!起始一行, 越多驚嘆號階層越低
+
+----
+* 範例
+ !標題 1
+ !!標題 2
+ !!!標題 3
+ !!!!標題 4
+ !!!!!標題 5
+
+----
+* 顯示
+!標題 1
+!!標題 2
+!!!標題 3
+!!!!標題 4
+!!!!!標題 5
+----</pre>
 </div>
 <div title="梦旅人" creator="YourName" modifier="YourName" created="201307250623" changecount="1">
 <pre>几年前，蔡康永在他主持的节目《今天不读书》上介绍了本很有意思的书——《革命前夕的摩托车之旅》。在大陆，这本书并不太出名。但书中主角是很多人（特别是老一辈）熟悉而且感兴趣的人物——切 格瓦拉。
@@ -1889,6 +2261,14 @@ I love you.</pre>
 模式的作用在于探索哪些是真正的点，而哪些是干扰的。就算一个很有用的点，放错了模式有害无益。好比做销售的注重于产品的实现技术而非用户体验，体验不行技术再好也是白搭。
 
 高效的模式的特征必定是低投入高产出，简单而迅速。</pre>
+</div>
+<div title="水平线" creator="YourName" modifier="YourName" created="201307280249" changecount="1">
+<pre>*說明
+新起一行, 內容為'{{{-----}}}'
+* 範例
+ ----
+*顯示
+----</pre>
 </div>
 <div title="浅析Ruby里的几个动态方法（一），send方法" creator="YourName" modifier="YourName" created="201307250603" changecount="1">
 <pre>动态方法，是去控制静态方法的方法，让静态方法的方法名和方法的内容会根据参数的变化而变化，简而言之，他使方法成为了一个变量。让我们通过一个多态实例，来理解一下最简单的动态方法send。
@@ -2353,6 +2733,248 @@ Richard Stallman自然不甘示弱地说：&quot;上帝说我创造了世界上�
 
 宿命论将在有时间的时间里永远统治这个世界。</pre>
 </div>
+<div title="等宽文字" creator="YourName" modifier="YourName" created="201307280248" changecount="1">
+<pre>----
+*說明
+使用 [[等寬文字]] 區塊 (適合用於程式碼): 分別用三層大括號{, }, 包住要套用的區塊
+
+----
+*範例
+ {{{
+var posTop = findPosY(e);
+var posBot = posTop + e.offsetHeight;
+var winTop = findScrollY();
+var winHeight = findWindowHeight();
+var winBot = winTop + winHeight;
+if(posTop &lt; winTop)
+ return(posTop);
+else if(posBot &gt; winBot)
+ {
+ if(e.offsetHeight &lt; winHeight)
+ return(posTop - (winHeight - e.offsetHeight));
+ else
+ return(posTop);
+ }
+else
+ return(winTop);
+ }}}
+----
+*顯示
+{{{
+var posTop = findPosY(e);
+var posBot = posTop + e.offsetHeight;
+var winTop = findScrollY();
+var winHeight = findWindowHeight();
+var winBot = winTop + winHeight;
+if(posTop &lt; winTop)
+ return(posTop);
+else if(posBot &gt; winBot)
+ {
+ if(e.offsetHeight &lt; winHeight)
+ return(posTop - (winHeight - e.offsetHeight));
+ else
+ return(posTop);
+ }
+else
+ return(winTop);
+}}}
+----</pre>
+</div>
+<div title="类型的本质和函数式实现(zz)" creator="YourName" modifier="YourName" created="201307280318" modified="201307280319" changecount="4">
+<pre>在上一篇文章《二叉树迭代器算法》中，我介绍了一种基于栈的二叉树迭代器实现。程序设计语言和Haskell大牛@九瓜 在看过之后评论到：
+&gt;这里用了 stack 来做，有点偷懒，所以错失了一个抽象思考机会。如果我们能够理解二叉树到线性表的转换过程，完全可以把 Iterator 当作抽象的线性表来看，只要定义了关于 Iterator 的 empty, singleton, 还有 append 操作，实现二叉树的 Iterator 就变得非常直观。
+“错失了一个抽象思考机会”是什么意思呢？我理解九瓜的意思是基于栈的实现虽然是正确的，但它缺乏对于迭代器类型本质的理解，不具有通用性。如果能对迭代器进行合适地抽象就可以像二叉树递归遍历一样自然地得出二叉树迭代器，甚至其他更复杂的数据结构，只要我们能写出它的遍历算法，迭代器算法都可以自然推出。
+!!!类型的本质
+九瓜提到了通过empty, singleton和append操作对Iterator进行抽象，我本来打算直接根据这个思路介绍函数式的二叉树迭代器实现，但是考虑到其实首要的问题在于理解类型的本质，而并不是所有人都具备这个基础，不如先普及一下类型基础再进入具体实现。那么下面就先以表示元素对的Pair类型为例子认识一下类型到底是什么？可能有人一提到Pair类型马上就会在脑海中浮现出下面的结构：
+{{{
+struct Pair {
+    int left;
+    int right;
+}
+}}}
+其实，这种理解是非本质的，Pair完全可以用2个元素的数组来表示，第一个元素表示left，第二个元素表示right：
+{{{
+struct Pair {
+    int elements[2];
+}
+}}}
+上面的两种不同表示是类型的不同实现，而类型的本质是由操作(Operation)和操作间的关系或不变式(Invariant)所定义的，我们称之为类型规范(Type Specification)。比如，Pair类型是这样定义的：
+{{{
+Type Pair:
+    Operations:
+        Pair make_pair(int x, int y)
+        int get_left(Pair pair)
+        int get_right(Pair pair)
+    Invariants:
+        get_left(make_pair(x, y)) == x  //对x, y构造的Pair取左元素等于x
+        get_right(make_pair(x, y)) == y  //对x, y构造的Pair取右元素等于y
+}}}
+也就是说只要是满足Pair类型规范，即定义了make_pair，get_left, get_right这3种操作，并且这些操作满足上面两个不变式，那么它这就是Pair类型。我们再来看看稍微复杂一点的Stack类型：
+{{{
+Type Stack:
+    Operations:
+        Stack make_stack()  //构造空栈
+        Stack push(Stack stack, int x)  //将元素x压栈，返回新栈
+        int top(stack)  //获取栈顶元素
+        Stack pop(Stack stack)  //将栈顶元素弹栈，返回新栈
+    Invariants:
+        top(push(stack, x)) == x  //栈顶元素为最后一次压栈值
+        pop(push(stack, x)) == stack  //对stack压栈后再弹栈等于原来的stack
+}}}
+Stack类型规范简言之就是FILO（先入后出），如果要形式化就是上面的不变式。为了加深理解，我们现在切换到测试视角来看一看，如果请你来编写一个Stack类的单元测试用例，你应该怎么写呢？许多朋友都不清楚单元测试到底测什么？怎么测？我见过不少人用一个测试用例单独对push做测试，用另一个测试用例对pop单独做测试，其主要原因就在于缺乏对类型本质的理解。其实，只要理解了类型的本质我们就知道孤立地看push或pop是没有任何意义的，它们的意义是在FILO关系下相互解释的，所以测试当然是基于类型规范来测试FILO不变式！这种基于类型规范的测试是一种黑盒测试，与类型的内部实现细节无关，只要单元测试覆盖了类型所定义的所有操作和不变式，那么不管内部怎么实现或优化，测试用例都不需要调整。反之，如果深入到了类型的内部实现做白盒测试，那这样的测试用例实际上就不再是反映其类型规范了，它会随着实现细节的调整而失效。
+更深一层来看，不仅是在Pair，Stack这样的微观层面，在一个系统的宏观层面同样可以采用类型视角，即考察系统定义了哪些操作？这些操作之间有什么样的关系或不变式？比如，你如何从类型的角度来看待MySQL这样一套数据库系统？MySQL系统定义了哪些操作？这些操作之间必须满足怎样的关系和不变式？不仅如此，类型视角除了可以应用于计算机系统，甚至还可以应用于生活中的事物，比如，你到超市购物可以寄存自己的包，在寄包的时候会获得一张密码条，取包时可以通过密码条打开箱子。你能从超市寄包这个例子中看出类型来吗？如果你看出来了，说明你对类型的理解真正融会贯通了！
+
+!!!类型的函数式实现
+上面我们介绍了类型的本质在于操作和操作间的关系，下面我们要关注的是类型的实现。在上面的例子中，Pair的内部结构到底是什么，是一个left和一个right成员？还是一个两元素的数组？没有讲，也没关系，就好像Windows的Handle和Linux的FileDescriptor一样，它们都是一个标识，你并不需要关心它的值本身，你只需要用几个相关的函数创建和操作它就行了（上面超市寄包例子中的密码条和Windows中的Handle是什么关系，你看出来了吗？你需要理解密码条的内容吗？）。换句话说，只要满足类型规范，具体实现是可变的，使用者只依赖于类型规范而不依赖于其具体实现。这在面向对象语言中意味着接口保持不变而具体实现可以变化（这里把public方法视为一种广义的接口）。
+下面，我们还会看到的是不仅类型的内部实现可以变化，而且可以根本没有什么所谓的内部实现。这是什么意思呢？让我们来思考一下，是不是Pair内部一定要有什么东西来保存构造函数传入的left和right？我们能跳出这个定势吗？在函数式编程中，我们能做到：
+{{{
+//Javascript
+function make_pair(x, y) {
+    // 返回一个支持get_left和get_right操作的闭包(Closure)
+    return {
+        get_left : function() { return x },
+        get_right : function() { return y }
+    }
+}
+function get_left(pair) {
+    return pair.get_left();
+}
+function get_right(pair) {
+    return pair.get_right();
+}
+// Test case
+console.log(get_left(make_pair(1, 2))) //1
+console.log(get_right(make_pair(1, 2))) //2
+}}}
+上面的关键代码在于make_pair的内部返回的不是一种具体的数据结构，而是一个支持get_left和get_right操作的闭包(Closure)，将来可以通过get_left和get_right来提取x, y。这种基于闭包的实现和我们通常采用的基于数据结构的实现的本质区别在哪里呢？不难发现，基于闭包的实现和类型规范是直接对应的，它并没有引入类型规范之外的东西，而基于数据结构的实现则隐藏了实现的细节。换句话说，如果要验证实现代码的正确性，对于前者只需要比对着类型规范，对于后者我们可能需要去仔细理解推敲其所采用的数据结构。对于Pair这样简单的结构二者差别不大，甚至基于数据结构的实现更简单，但是对于复杂的类型就容易体现出闭包实现的优势了。为了加深理解，我们再来看一个Stack的函数式实现：
+{{{
+//Javascript
+function make_stack() {
+    return null
+}
+function push(stack, x) {
+    return {
+        top : function() { return x },
+        pop : function() { return stack }
+    }
+}
+function top(stack) {
+    return stack.top()
+}
+function pop(stack) {
+    return stack.pop()
+}
+// Test case
+var stack = make_stack()
+stack = push(stack, 1)
+stack = push(stack, 2)
+stack = push(stack, 3)
+console.log(top(stack)) //3
+stack = pop(stack)
+console.log(top(stack)) //2
+stack = push(stack, 4)
+console.log(top(stack)) //4
+}}}
+上面的所有函数都是采用了无副作用的纯函数式设计，可能习惯面向对象编程的朋友不是很习惯，不过这不影响我们对类型的讨论，而且它也很容易改造成面向对象的风格，感兴趣的朋友可以自己尝试对上面的代码进行简单的包装让它看起来像面向对象的样子。
+
+!!!函数式二叉树迭代器
+上面我们介绍了类型的本质和函数式实现，下面我们再来看看Iterator类型又该如何定义和实现呢？ 思路当然还是从操作入手，考虑Iterator类型对应了哪些操作，它们的关系是什么？上面九瓜提示了Iterator类型可以抽象为线性表List类型，或者说Iterator本质上是一个List。为什么呢？其实，只要跳出“如何表示数据结构”的思维，从类型角度思考就很容易理解，因为Iterator和List都定义了相同的操作，Iterator的使用者完全不关心也不知道它背后到底是链表还是二叉树，你对Iterator的操作和一个List的操作完全一样。正是这个原因，STL等范型库才能通过Iterator将算法和数据结构解耦。
+怎么定义一个List类型呢？九瓜提到的empty(), singleton()和append()实际上就是和List打交道最多的Lisp语言的经典定义方式。Lisp是基于s-expression的，s-expression既可以视为线性表又可以视为树，本质上Lisp为List类型定义了构造、取首元素和取剩余元素等几种操作：
+{{{
+Type List:
+    Operations:
+        List empty()  //构造空表，通常由()这个文字量表示
+        List singleton(Element e)  //构造包含一个元素的表，通常由(e)这个文字量表示
+        Element first(List list)   //取list的第一个元素，通常又叫car操作
+        List rest(List list)  //取list除第一个元素外的剩余部分，通常又叫cdr操作
+        List append(List list1, List list2) //连接两个表
+    Invariants:
+        append(empty(), list) == list  //空表和表list连接后等于表list
+        append(list, empty()) == list  //空表和表list连接后等于表list
+        first(singleton(e)) == e  //对singleton(e)取首元素等于e
+        rest(singleton(e)) == empty()  //对singleton(e)取首元素外的剩余部分的结果为空表
+        append(first(list), rest(list)) == list  //对list的首尾两部分进行连接等于list本身
+        if list1 is not empty then
+            first(append(list1, list2)) == first(list1)  //对非空表list1于表list2的连接取首元素等于对非空表list1取首元素 
+        if list1 is not empty then
+            rest(append(list1, list2)) == append(rest(list1), list2)  //对非空表list1于表list2的连接取首元素等于对非空表list1取首元素 
+}}}
+有了上面的分析，我们相应地写出下面的List实现：
+{{{
+//Javascript
+function empty() {
+    return null
+}
+function singleton(e) {
+    return {
+        first: function() { return e },
+        rest: function() { return null }
+    }
+}
+function first(list) {
+    return list.first()
+}
+function rest(list) {
+    return list.rest()
+}
+function append(list1, list2) {
+    if (null == list1) return list2
+    if (null == list2) return list1
+
+    return {
+        first : function() { return first(list1) },
+        rest : function() { return append(rest(list1), list2) }
+    }
+}
+}}}
+在此基础上可以进一步实现二叉树迭代器：
+{{{
+function make_binary_tree_iterator(node) {
+    return {
+        first : function() {
+            return null != node.left ? first(make_binary_tree_iterator(node.left)) : node
+        },
+        rest : function() {
+            var left_it = (null == node.left ? null : make_binary_tree_iterator(node.left))
+            var root_it = singleton(node)
+            var right_it = (null == node.right ? null : make_binary_tree_iterator(node.right))
+            var it = append(append(left_it, root_it), right_it)
+            return rest(it)
+        }
+    }
+}
+//======== Test case ========
+var tree = { 
+    value : 1, 
+        left : {
+            value : 2,
+            left : { value : 4, left : null, right : null },
+            right : null
+        },
+        right : {
+            value : 3,
+            left : null,
+            right : { value : 7, left : null, right : null }
+    }
+}
+for (var it = make_binary_tree_iterator(tree); null != it; it = rest(it)) {
+    console.log(first(it).value)
+}
+}}}
+上面的make_binary_tree_iterator在List类型的基础上按照二叉树遍历过程构造了一个List。不知道你是否注意到了，为什么它不像下面这个例子一样直接返回一个List，而要构造一个闭包呢？
+{{{
+function make_binary_tree_iterator(node) {
+    var left_it = (null == node.left ? null : make_binary_tree_iterator(node.left))
+    var root_it = singleton(node)
+    var right_it = (null == node.right ? null : make_binary_tree_iterator(node.right))
+    return append(append(left_it, root_it), right_it)
+}
+}}}
+这里关键的区别在于闭包是惰性求值的，也就是说只有当真正开始迭代遍历的时候才会逐渐对各个函数进行求值，而上面的函数递归调用是非惰性的，会从一开始就把所有结点展开成线性表。如果你对这一点还不能很好地理解，可以尝试在各个函数中加log跟踪函数的调用过程。
+
+!!!总结
+本文介绍了类型的本质在于它所定义的操作以及操作之间的关系和不变式。类型的实现关键在于满足类型规范的要求，而具体实现是可以变化的，使用者和测试用例都应该只依赖于类型规范而不依赖于具体实现。函数式的类型实现往往和类型规范是直接对应的，简单通用且容易验证程序的正确性，但可能有性能问题，而命令式的类型实现往往会引入复杂的内部数据结构和算法，不具有通用性但是一般比较高效。这两种实现并不是完全互斥的，有时候可以将二者相结合达到简单与高效的结合。</pre>
+</div>
 <div title="经济学入门书籍推荐" creator="YourName" modifier="YourName" created="201307261002" modified="201307261003" changecount="3">
 <pre>(转自http://www.douban.com/note/201020832/)
 2012-02-17 11:13:43
@@ -2807,6 +3429,83 @@ South-Western College Pub; 4 edition
 内部阅读：带着问题去看，提出一个如何写程序拓展的场景，（你以后想拓展这一块逻辑该怎么做？有没有内建的现成API可供调用），总之不要被文档带着思路走，要被问题带着思路走．
 
 请大家多拍砖或补充，多谢．</pre>
+</div>
+<div title="雕爷：创业公司如何管理员工(zz)" creator="YourName" modifier="YourName" created="201307280308" changecount="1">
+<pre>朋友来我公司溜达，惊讶于漂网小童鞋们的敬业，晚上九点，还一多半没走。晚上十二点，也肯定依然灯火通明——即使不少人没在办公室，也依旧还在公司Q群里谈事说事。 
+
+他问道：“我嚓啊，我怎么招聘的九零后，个个都屌不拉几，不敬业也就罢了，还动不动就闹辞职，哄着都不行！离职率高得不像话。七零版我就会管理，九零版一筹莫展！” 
+
+麻将法提升积极性 
+
+好吧，如果我来回答这个问题，我就会先推荐他先去“快书包”买本书：《海底捞你学不会》。我认为我自己的答案，全都在那本书，某一页纸上了！哎，刚好那页，被我撕下来，去复印了。手头虽然没有，但可以用记忆，随便复述一下： 
+
+某海底捞基层员工的总结说，其实，用打麻将的状态，去做工作，就成功了！你想想看，打麻将的时候，你坐在我对面，我不小心把麻将掉地上了，掉你脚底下了。你会抱怨说是我的错，还是直接把牌捡起来？OK，全都是立即默默捡起来对吧？为什么这时，不指摘别人犯错呢？因为，你如果想玩牌，想赢钱，就别那么多废话，直接能快点打牌，才是最重要的！ 
+
+打麻将的人，要凑一个“小团队”才能干活，如果大家约好了八点打牌，可是七点的时候，三个人就到齐了，三缺一啊，肯定给那个没到的打电话。想想，那家伙是埋怨对方三人，“不说好了八点么？你们早到了是你们错啊，催我干嘛？”还是赶紧说抱歉抱歉，我尽快赶到！狠不能平时不舍得打车，这时也为了对方三人，打车前来了！ 
+
+请问，这时的心态，用自己的行动，来安慰队友的心情，用来工作，那得多健康啊！ 
+
+往往打麻将的人，会提前说好几点散伙。但经常的状况是，说好12点散，可11点半时，输钱那家伙就提议了，哥几个，我今天背，能不能加会儿班，多打几圈？通常是不是大家都同意呢？这时的加班，怎么没人抱怨？都默认响应？ 
+
+打麻将的人，从来不会抱怨环境，天再热，光着膀子也打，也不觉得有多难受。没桌子，搬个箱子也打！年纪再老，身体再差，只要一开始摸牌，立即精神抖擞，精力无穷！投入其中后，所有外在糟糕环境，也如浮云一般，不在话下，浑然忘我了。 
+
+打麻将的人，还都自觉自发，苦练技艺！九条和六条，七万和九万，纯用手摸，差别那真是微小啊！可是你看，打麻将的人，都没事就练，结果各个手指上仿佛长眼睛。这没人逼着，自觉苦练的劲头儿，到底哪儿来的呢？ 
+
+打麻将的人，还一巨大优点：输钱了，绝不怪罪别人。技不如人，都是骂自己笨，或者点背运气差。从没说，“你们肯定作弊了！都怪你们，老子才输的钱！”这他妈得多健康的心态啊！如果工作中，人人都是这种不抱怨别人，反而从自己身上找原因的态度，哪个企业不得噌噌的增长啊！ 
+
+基本上，每个人读完这些“打麻将论”，估计都会拍案叫绝。我要说的，和我们漂网一直在做的其实一样。我们的管理，其实就是我称之为“支桌子”的事。 
+
+每个人天性中，都是喜欢玩，而不喜欢工作。只不过，七零版人，小时候穷，心重！所以肯压抑自己，去努力工作，默默奋斗。而现在九零后小孩，成长的时候，就相对富裕了，也更会为了自由，而放弃很多物质追求。所以，如果公司能够把工作，设置得天天玩一样，则很多管理问题，迎刃而解。 
+
+所以，光把管理类比成打麻将没用，还得真的去做才行。所以我说是“支桌子”。在公司内把桌子支起来，让麻将飞一会。 
+
+麻将的特点，一是公平，相对而言，大家都遵守规矩，一晚上下来，再背运的人，也有和几把牌的机会。所以人人爱玩，菜鸟也喜欢跟着玩。所以在漂网，有些奖励，比如某日上个硬广，当天能上40万，则公司人人都赢，赢得春装一件。每次周业绩新高，也必然全公司人人有奖励，已经形成不成文规矩。C店从一皇冠就开始吃，一直吃到五皇冠饭了…… 
+
+第二个特点，是麻将多多少少有运气成分，使得游戏充满悬念。比如漂网有时候的奖励是扔飞镖，扎多少数得多少钱。有时候抽红包，也许一百，也许一千……有时候竞猜第二天营业额，最准确那个独得千元(其实90%得奖成分得靠蒙！)例如最近的新游戏是，如果第二天有首页硬广，谁先刷出来，第一个截图到Q群里，就独得999元，结果现在每个人都变夜猫子，拼人品，看谁先刷出来，并截图……就连最新清明小长假的“美食比赛”，也运气成分居多：每个人假期，都买来奇怪零食，然后放一起，比拼谁的美食更有创意，然后赢得大奖……妈的，谁买的酱鸭翅？老子今天拉稀一天了！ 
+
+麻将第三特点，是最终而言，谁更勤奋更用功更聪明，把时间拉长，就能赢得更多。比如漂网新近弄了个分库，在大山子，就叫“山库”。时间国际大厦这库，就叫“国库”。两个库，就开始玩游戏了，每日最快奖，每周最多奖，零差错大奖……总之，山库PK国库，玩着玩着，哪个库更勤奋，也就体现出来了……当然，最终顾客满意度，也就上来鸟~~~再比如如果五月份纯漂网的网络销售能过一千万，最勤奋最核心的一票人马，就马尔代夫度假了……这，比拼的说到底，是辛勤汗水。 
+
+宏观而言，麻将管理法，一个核心要素是：快速输赢，快速开局。仿佛打麻将一晚上，其实是很多很多局的。如果玩一整晚，就只和一把牌，只有一个人胜出，我猜麻将绝对没现在这么兴盛。 
+
+如果九零后小孩们每天的工作，都是这种极强游戏感，赢了固然开心，输了也不怕，只盼着快速开下一局，有赌未必输，能赢就下注！这种浓厚氛围一旦形成，只怕小童鞋们想不投入都难，玩嘛！(虽然，在别人眼中，管这叫“敬业”。) 
+
+最后，我必须说明一下，也是黄铁鹰在《海底捞你学不会》一书，最后一章点题时所述，为什么海底捞你学不会？概因创始人性格使然。管理是艺术，而非科学。既然是艺术，就有天分的那个东东在里面，硬学，是学不来的。或者说，你可以发挥你的长项，却很难抄袭别人与生俱来的才艺。戴尔的极致运营效率，西南航空的低成本战略，苹果天马行空的创新能力，这些案例，商学院讲了N多年了，却为什么没一个COPY成功的案例？因为，那是创始人的基因 ，骨子里的天分……后天又磨砺多时，团队人人信奉，细节日日雕琢，哪能别人看着好，便说学就学呢？硬学，往往邯郸学步，最终南辕北辙，元气大伤。 
+
+企业增长需与员工能力匹配 
+
+谈到这里，就会有很多人出来驳斥：如果你的小企业，缺乏高增长，那么培养人就是为他人做嫁衣! 
+
+好吧，我必须得说，这是个俺们屌丝创业界由来已久的“迷思”。 
+
+首先我想，大家必须承认，一次创业，和组件一个家庭似的，有其生命周期，你不能把事情想得太美妙，但也别太沮丧。不太成功的小企业，通常是飞速走完其周期，而大企业，往往能在辉煌的时刻延续很久。但终究终究，每个企业都会衰亡的……就仿佛，一对少年少女，一想起组建家庭，就充满粉红色的憧憬，浪漫且美满，其实呢，一个家庭的周期，分为“单身期、新婚期、生育期、满巢期、离巢期、空巢期、鳏寡期”，有句话这么说，“我们的幸福，都只存在于别人的眼中”——只有“满巢期”的企业，才是别人眼中的完美。实际上，无论是家徒四壁的创业“单身期”，或举步维艰的草创“新婚期”，以及虽然高速成长但慌张混乱的“生育期”，都充满着艰涩与痛苦……而企业开始走下坡路的“离巢期”或之后的阶段，想想都令人心酸。 
+
+回到培养人的问题，我先问句狠的：就算你不培养牛逼精英，你以为普通笨蛋，你就留得住么? 
+
+我自己在初创阶段，就有过这样伤疤，明明平庸得不能再平胸的小出纳，突然告诉我，她家里个找了个大企业里的……还是继续当小出纳，但她妈说，毕竟大企业更稳定，看起来短期之内不会倒闭，然后，她还居然给我下通牒，“老板，那边要求我迅速到岗，我就明天天做交接哈，所以你明天最好能麻利点”，我当时心里那叫个千万头草泥马奔腾啊……可又能怎样。形势比人强， 一个屌丝小企业老板的辛酸，真不是一个安稳白领能理解的。 
+
+这时，各位，就带出一个问题来了：你别以为你的企业不增长，就能留住武功同样不增长的普通员工——再烂的员工，也有攀高枝的心耶!你信不信?丫没离开你，是因为没遇到好机会而已……一旦遇到稍微好一点的机会，平庸员工离开你的动力，并不比精英员工的少半分! 
+
+反过来想你就平衡了，你如果高速增长呢?你会始终留住那些不匹配的员工么?你业界增长十倍速了，有些员工还是一倍速的能力，你能忍受?他耽误的不仅仅是他自己的前途，还拖了整个团队的后腿。你是不是顶多再给这种苯苯几个月机会，还不行，也就挥泪劝退了?这时候，你怎么不骂自己没良心呢? 
+
+所以，最终员工能否留得住的核心原则就一条：匹配。 
+
+企业业绩的增长，和员工武功的增长，只要是匹配的，就能获得“动态稳定”。反之，无论是企业快，还是员工快，都会造成员工的流失，不以你的意志为转移。 
+
+好了，接下来回到你培养人才被谁挖走的问题通常来说，挖你人的，通常是和你相似规模的企业，高一两个等级是有的，但数百亿规模的百度，跑个二十人小公司挖人，你信么？这就是另一种“匹配”的问题，换个角度，假如你是个200人公司的小型企业，从百度空降个高层给你，你敢要么？就算你给得起薪水，他的管理能力、或业务水平，是你能消化得掉的么？再过来，从一个10人小作坊给你挖来个副总，也给你当副总，你敢要么？200人小企业虽然小，但流程的建立，必定也初具成效，从10个人那种“沟通基本靠吼”的地方来个副总，你不得鸡飞狗跳？ 
+
+我想说的核心是：既然你挖人时会想，和你匹配，是指从100人到500人的企业挖来的才靠谱，那么别人挖你的人肯定也跑不出这个圈圈儿——OK，我想问，你难道就没跑赢同等竞争对手的雄心么？ 
+
+最后，我想说的第三个“匹配”是，你应该给你培养的精英，同等节奏的涨薪。你培养了他，不代表他就欠你半辈子。实际上，他的成长肯定是先出现，而你的涨薪往往落后半拍——嘿嘿，你已经占到便宜啦。但你不能“占便宜没够吃亏难受”啊!长时间占人便宜是不对D!差不多就行啦，看着明显该名员工的武功，已经明显领先于他的薪水了，你就应该用“匹配”原则，结找补上。 
+
+比如我们的一个优秀美工，两年多以前不到四千薪水，每个月都涨薪，现在已经翻了四五倍了。我丝毫不觉得我给高了，因为我知道，这家伙如果出去，走到哪里，现在水平也值这个价码了。实际上不止这一个，我们很多员工都是这个幅度涨上来的……我作为一个臭奸商，内心何尝不希望业绩是现在这个业绩，而他们的薪水维持在两三年前的水平呢?但每次我这种邪念产生之时，都给自己一个嘴巴，“你丫清醒点，人家不欠你什么!你培养他们，也是为了企业的利益，而非特蕾莎修女那种无私的博爱好不好?” 
+
+额外的好处是，我真正看重的员工，我从不担心被挖——外面多给个三五千，在他们心里很不在乎，因为他们知道，只要自己持续努力，这点“小钱儿”很快在我们这里也能涨上，并超出。而很多很多的企业，他们早就看清了，并不真的培养人，只想高薪挖来“能人”，来了立即就干活儿，往死里用，榨干为止。而一个人的能力开始停滞不前了，那他的薪水也肯定就涨到头了。 
+
+刚才说的那个美工，我就曾直说，“你看，别的地方肯定愿意更高薪水挖你，但你为何在雕爷我这里更愉快?因为我给你发呆、走神、犯傻的时间与空间。”啥意思各位明自么?就是一个浑身充满艺术细菌的美工，不能往死里用，天天陷入具体作图，眼界与水平就很难真正提升。我甚至轰他们有些日子别来上班，给我看画展、听歌剧去。“功夫在诗外”，把脑袋放空，触类旁通，看别的艺术类别，才能使自己的眼界高上去。甚至，我淘上千块一张的门票，请美工去看美国ABT的《天鹅湖》——顺便说一句，ABT演绎的天鹅湖，真是教科书般完美。就是魔王的扮相很奇怪，怎么不是黑色羽毛大氅，而是绿毛水怪一样的紧身衣呢? 
+
+所以，你真的用心培养，又辅以匹配的涨薪，何惧别人来挖？ 
+
+有人又说了， 两个精英极品的涨薪当然能承受，但公司很多人都这么涨，能行么？我的答案是：如果公司里大多数员工都发疯般努力，你自然能超越竞争对手，接下来自然是相匹配的利润，三个人拿四个人的薪水干出五个人的成绩，怎么会涨不了那点“匹配”的薪水呢？ </pre>
 </div>
 <div title="（转）查理芒格资料整理" creator="YourName" modifier="YourName" created="201307261009" changecount="1">
 <pre>(一) 投资者文摘上到目前关于芒格文章汇总
