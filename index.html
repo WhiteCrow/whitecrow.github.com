@@ -591,11 +591,17 @@ You'll also need to enter your username for signing your edits: &lt;&lt;option t
 
 5) Updating all gems step by step .</pre>
 </div>
+<div title="Javascript" creator="YourName" modifier="YourName" created="201307290327" changecount="1">
+<pre>[[非常全的JavaScript语言机制参考|http://dmitrysoshnikov.com/]]</pre>
+</div>
 <div title="Life" creator="YourName" modifier="YourName" created="201307250623" modified="201307250623" changecount="2">
 <pre> 
 [[梦旅人]]
  
 [[昙华林]]</pre>
+</div>
+<div title="Linux Common Command" creator="YourName" modifier="YourName" created="201307290338" changecount="1">
+<pre>[[Unix Toolbox|http://cb.vu/unixtoolbox.xhtml]]</pre>
 </div>
 <div title="MainMenu" creator="Aaron" modifier="YourName" created="201307250354" modified="201307280323" changecount="22">
 <pre>!!!IT
@@ -1085,13 +1091,21 @@ Thanks to Emma Smith for help with compiling the update.
 
 2013/01/06 [[我老板是如何教学生做research 的（转载）]]</pre>
 </div>
-<div title="Unix &amp; Linux" creator="YourName" modifier="YourName" created="201307250526" changecount="1">
-<pre>[[Linux Common Command]]
+<div title="Unix &amp; Linux" creator="YourName" modifier="YourName" created="201307250526" modified="201307290338" changecount="4">
+<pre>[[Unix Theory]]
+[[Linux Common Command]]
 [[Vim]]
 [[Git]]</pre>
 </div>
-<div title="Vim" creator="YourName" modifier="YourName" created="201307280254" changecount="1">
-<pre>[[vim字符串替换(zz)]]</pre>
+<div title="Unix Theory" creator="YourName" modifier="YourName" created="201307290326" modified="201307290709" changecount="4">
+<pre>[[AIX and UNIX 系统管理员系列文章|http://www.ibm.com/developerworks/cn/aix/lp/speakingunixnew.html]]
+ 
+[[shell输入数据、输出数据和数据传输]]</pre>
+</div>
+<div title="Vim" creator="YourName" modifier="YourName" created="201307280254" modified="201307290333" changecount="2">
+<pre>[[vim字符串替换(zz)]]
+
+[[我的vim安装地址|https://github.com/carlhuda/janus]]</pre>
 </div>
 <div title="i美股：美国另一位94岁股神的投资思想作者：理想便宜" creator="YourName" modifier="YourName" created="201307261005" changecount="1">
 <pre>Walter Schloss 
@@ -1164,6 +1178,45 @@ Test.instance_eval_test
 #=&gt;NoMethodError: undefined method `instance_eval_test' for #&lt;Class:0x00000002a84df8&gt;::Test
 &lt;/pre&gt;
 &lt;/html&gt;</pre>
+</div>
+<div title="shell输入数据、输出数据和数据传输" creator="YourName" modifier="YourName" created="201307290658" modified="201307290712" changecount="6">
+<pre>!!!shell输入数据、输出数据
+独立使用 find 时，总是以文件系统的内容作为输入数据。但是 sort 和 uniq 则需要从标准输入设备 (stdin) 请求数据输入。多数情况下，您会使用键盘作为 stdin：例如，您需要输入要排序的数据行。
+默认情况下，find 在标准输出设备（stdout，通常是您的终端窗口）上打印结果。sort 和 uniq 都将输出打印到 stdout。
+为了说明 stdin 和 stdout，您可在终端窗口中输入以下文本（假设前面的百分号 (%) 为您的 shell 提示符）：
+
+stdin 和 stdout
+{{{
+                % sort
+mustache
+horn
+hat
+Control-D
+}}}
+sort 从 stdin 读取您输入的三行文本，并对其进行排序，然后将结果写出到 stdout。图 1 所示为从命令行运行 sort 和多数 UNIX 命令行实用工具的示意图。
+
+''图 1. 典型 UNIX 命令行实用工具从 stdin 读取并写入到 stdout''
+[img[IO|http://www.ibm.com/developerworks/cn/aix/library/es-unix-commandline/IO.gif]]
+
+某些实用工具，例如 find 并不从 stdin 读取内容。它们是从系统资源（例如文件系统或系统内核）读取需要处理的数据，然后将结果写入到 stdout。要直观查看 find 的工作方式，请参见以下的图 2。
+
+''图 2. 某些实用工具从系统资源读取数据并将结果写入到 stdout''
+[img[find|http://www.ibm.com/developerworks/cn/aix/library/es-unix-commandline/find.gif]]
+
+除了使用 stdin 和 stdout 之外，UNIX 命令还将生成的错误消息输出到一种特殊出口以便进行诊断，该出口通常并不是强制的。此出口称为标准错误设备（通常简称为 stderr）。图 3 所示为运行实用工具的简单命令行。
+
+''图 3. UNIX 命令生成错误并输出到特殊通道，即标准错误设备''
+[img[stderr|http://www.ibm.com/developerworks/cn/aix/library/es-unix-commandline/stderr.gif]]
+ 
+如图 3 中所示，多数 UNIX 命令从终端读取输入，将结果发送到终端，并将错误打印到终端上。默认情况下，除非另行指定，您的终端既是 stdin 的数据源，也是 stdout 和 stderr 的输出目标。
+
+!!!shell数据传输
+不过，您可更改 stdin 的源以及 stdout 和 stderr 的目标。您可强制 stdin 从文本文件、设备（比如连接到计算机的探头）或网络连接中进行读取。类似地，您可将输出结果发送到文件、设备或网络连接。在 UNIX 中，所有资源都被视作文件，因此某种源或目标很容易作为另外的源或目标而被接受或产生。
+更改进程数据的源和目标被称为重定向。您可重定向 stdin 以从文件或其他源读取数据，还可分别对 stdout 和 stderr 重定向以将数据写到终端窗口之外的其他位置。在许多情况下，如前面所列出的初始 find 命令中，您还可重定向实用工具以从其他工具接收和为它们产生所需的数据。这就是管道 (|) 的用途。您可在命令中通过管道来生成进程链路，即将某条命令的数据发送到下一条命令，这类似于通过铜管将水从热水器传输到洗手池中。
+图 4 所示为 find . -type f -print | sort | uniq 命令的示意图。
+
+''图 4. 通过管道进行链接的三个实用工具的示意图''
+[img[chain|http://www.ibm.com/developerworks/cn/aix/library/es-unix-commandline/chain.gif]]</pre>
 </div>
 <div title="vim字符串替换(zz)" creator="YourName" modifier="YourName" created="201307280254" modified="201307280304" changecount="16">
 <pre>vi/vim 中可以使用 :s 命令来替换字符串。以前只会使用一种格式来全文替换，今天发现该命令有很多种写法(vi 真是强大啊，还有很多需要学习)，记录几种在此，方便以后查询。
