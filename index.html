@@ -530,8 +530,9 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 <div title="AdvancedOptions" creator="Aaron" modifier="Aaron" created="201307250528" changecount="1">
 <pre>&lt;&lt;options&gt;&gt;</pre>
 </div>
-<div title="Arel（ActiveRecord核心组件）源码学习笔记" creator="YourName" modifier="YourName" created="201308050752" modified="201308050847" changecount="6">
-<pre>Arel是ActiveRecord中的一个组件，他的主要作用是将Rails代码通过DSL生成SQL语句．
+<div title="Arel（ActiveRecord核心组件）源码学习笔记" creator="YourName" modifier="YourName" created="201308050752" modified="201308061025" changecount="9">
+<pre>!!!1, Arel做什么？
+Arel是ActiveRecord中的一个组件，他的主要作用是将Rails代码通过DSL生成SQL语句．
 [[源码地址|http://github.com/rails/arel]]
 
 官方介绍是这样说的：
@@ -540,10 +541,14 @@ Arel is a SQL AST manager for Ruby. It
 1. Simplifies the generation of complex SQL queries
 2. Adapts to various RDBMS systems
 
+!!!2, Arel原理是什么？
 整个Arel的作用大家应该都知道了，那么它的原理是什么呢？就是将Rails的query代码转化为AST（不了解AST的可以上维基百科进行查询），最后遍历并拼接为一段SQL语句．分为以下几步．：
 1. 将Rails的query语句解释为一个AST．
 2. 将AST的每个node翻译为SQL语句．
-3. 遍历SQL语句，拼接为SQL字符串．</pre>
+3. 遍历SQL语句，拼接为SQL字符串．
+
+!!!3, Arel和ActiveRecord的关系是什么？
+ActiveRecord将查询代码交给Arel，然后由Arel转化为SQL语句，再将SQL语句交由ActiveRecord去进行数据库查询．</pre>
 </div>
 <div title="Business" creator="YourName" modifier="YourName" created="201307280307" modified="201307280308" changecount="2">
 <pre>[[有关创业的一些资料(zz)]]
