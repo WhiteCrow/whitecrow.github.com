@@ -530,8 +530,20 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 <div title="AdvancedOptions" creator="Aaron" modifier="Aaron" created="201307250528" changecount="1">
 <pre>&lt;&lt;options&gt;&gt;</pre>
 </div>
-<div title="Arel（ActiveRecord核心组件）源码学习笔记" creator="YourName" modifier="YourName" created="201308050752" changecount="1">
-<pre>Arel是ActiveRecord中的一个组件，他的主要作用是将Rails代码通过DSL生成SQL语句．</pre>
+<div title="Arel（ActiveRecord核心组件）源码学习笔记" creator="YourName" modifier="YourName" created="201308050752" modified="201308050847" changecount="6">
+<pre>Arel是ActiveRecord中的一个组件，他的主要作用是将Rails代码通过DSL生成SQL语句．
+[[源码地址|http://github.com/rails/arel]]
+
+官方介绍是这样说的：
+Arel is a SQL AST manager for Ruby. It
+
+1. Simplifies the generation of complex SQL queries
+2. Adapts to various RDBMS systems
+
+整个Arel的作用大家应该都知道了，那么它的原理是什么呢？就是将Rails的query代码转化为AST（不了解AST的可以上维基百科进行查询），最后遍历并拼接为一段SQL语句．分为以下几步．：
+1. 将Rails的query语句解释为一个AST．
+2. 将AST的每个node翻译为SQL语句．
+3. 遍历SQL语句，拼接为SQL字符串．</pre>
 </div>
 <div title="Business" creator="YourName" modifier="YourName" created="201307280307" modified="201307280308" changecount="2">
 <pre>[[有关创业的一些资料(zz)]]
@@ -730,8 +742,10 @@ end
 [[The 100+ most followed psychologists and neuroscientists on Twitter ]]
 </pre>
 </div>
-<div title="Ruby and Rails" creator="YourName" modifier="YourName" created="201307250551" modified="201308050751" changecount="11">
-<pre>[[Arel（ActiveRecord核心组件）源码学习笔记]]
+<div title="Ruby and Rails" creator="YourName" modifier="YourName" created="201307250551" modified="201308060948" changecount="13">
+<pre>[[Ruby中的几则调试小技巧]]
+
+[[Arel（ActiveRecord核心组件）源码学习笔记]]
 
 [[Ruby解释器学习笔记]]
  
@@ -781,6 +795,52 @@ bar
 
 return范围
 在一个方法内使用Proc/lambda时，在bar方法中，如果Proc内包含了return，则执行到Proc内的return就不再往下执行。换言之，proc的return是作用于整个方法的。 而在bar方法中，lambda的return将不会影响方法的继续执行，lambda的return仅仅作用于代码块的内部。</pre>
+</div>
+<div title="Ruby中的几则调试小技巧" creator="YourName" modifier="YourName" created="201308060922" modified="201308061005" changecount="18">
+<pre>''先进入ruby console''
+!!!方法调试
+1,methods grep
+　查询某个方法是否存在
+{{{
+#查询'test'方法或者包含test字符的方法是否存在
+&gt; User.methods.grep(/test/)
+}}}
+methods用于列出对象所有的方法，grep则是从所有方法中过滤出程序员想查询的方法
+与methods类似的方法还有：
+singleton_methods, protected_methods, private_methods, public_methods
+
+2, method source_location
+　查询某个方法的详细信息．
+{{{
+&gt; User.method(:where).source_location
+#=&gt;[&quot;/home/liush/.rvm/gems/ruby-2.0.0-p195/gems/activerecord-3.2.13/lib/active_record/querying.rb&quot;, 8]
+}}}
+　如果你是使用的pry作为console，可以直接使用&quot;show-method&quot;或&quot;show-source&quot;，我猜测它是调用的Ruby中的method方法：
+{{{
+&gt; show-method Refinery::User.where
+#=&gt;From: /home/liush/.rvm/gems/ruby-2.0.0-p195/gems/activerecord-3.2.13/lib/active_record/querying.rb @ line 8:
+#Owner: ActiveRecord::Querying
+#Visibility: public
+#Number of lines: 1
+#
+#delegate :find_each, :find_in_batches, :to =&gt; :scoped
+}}}
+
+3, reload-method, reload-code
+
+!!!变量调试
+local_variables, instance_variables
+
+!!!类调试
+1, ancestors
+2, ls cd gem-cd 
+
+3, show-models
+这个方法只有在pry的rails console下才可以使用，irb下不可使用
+{{{
+&gt; show-models
+}}}
+用于查看该文件目录下所有被定义的非rails的class及其属性，意思就是说显示所有的class，但不包含rails和gem本身的class．一般用于查看数据表对应的ORM类和表之间的关系．</pre>
 </div>
 <div title="Ruby解释器学习笔记" creator="YourName" modifier="YourName" created="201307280305" changecount="1">
 <pre>前置知识：
