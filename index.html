@@ -611,6 +611,213 @@ You'll also need to enter your username for signing your edits: &lt;&lt;option t
 
 5) Updating all gems step by step .</pre>
 </div>
+<div title="JavaScript中的数据类型，内存分配，==和===，undefined和null，闭包" creator="YourName" modifier="YourName" created="201308150730" modified="201308150734" changecount="2">
+<pre>摘自 http://kenbeit.com/blog/2012/03/25/javascript-note/
+
+!!!数据类型和内存分配
+1.基本数据类型，Undefined,Null,Number,String,Boolean，存放在栈中。
+2.符合数据类型，Object,Function,Array,自定义对象，存放在堆中，栈中存放的是指针，指向堆中的对象。
+
+例：
+{{{
+var name = &quot;kenshin&quot;;
+var user = new User();
+}}}
+
+“kenshin”直接存在栈中，name指向它。user存在栈中，它指向堆中的new User()。
+基本数据类型和其包装类型
+来看看String，Number，Boolean这3个数据类型。
+
+{{{
+var primitive = 1;
+var box = new Number(1);
+primitive instanceof Number // =&gt; false
+primitive instanceof Object // =&gt; false
+box instanceof Number // =&gt; true
+typeof primitive // =&gt; &quot;number&quot;
+typeof box // =&gt; &quot;object&quot;
+}}}
+
+直接用字面量定义值，返回的结果直接是基本类型，不是自己的包装类型的实例，也不是Object类型。
+
+不通过new关键字，直接像调用方法一样调用Number，String，Boolean，功能是将包装类型转换为基本类型。
+
+以下都会返回基本数据类型的1
+
+{{{
+var num1 = Number(1);
+var num2 = Number(new Number(1))
+}}}
+
+''对于基本类型，不要用其包装类型来创建对象，直接用字面量定义，用typeof而不是instanceof来判断是何种类型。''
+!!!== 和 ===
+ECMAScript对于==的处理顺序很复杂。有10条大规则，在比较 x == y时，当typeof(x)等于typeof(y)时，还有6个细分规则，当typeof(x)是Number时，还有更细的6条规则，所以不一一列举。有兴趣可以看[[Ecma-262.pdf|http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf]]中的11.9.3小节。
+
+这里主要列举些常用的但是不容易注意到的情况：
+
+以下全部为true
+
+{{{
+1 == &quot;1&quot;
+1 == true
+0 == false
+undefined == null
+1 == new Number(1)
+&quot;a&quot; == new String(&quot;a&quot;)
+}}}
+
+以下例外，返回的false
+{{{
+new String(&quot;a&quot;) == new String(&quot;a&quot;)
+}}}
+
+===被称为全等操作符，ECMAScript中有7条大规则，当typeof(x)是Number时有6条细规则。但是它其实比==好理解，它把类型判断放在了第一位，即只要typeof(x)不等于typeof(y)，就返回false。有兴趣可以看Ecma-262.pdf中的11.9.6小节。
+
+''所以除非你明确需要==的功能，否则你都更应该用===来做条件判断。''
+
+
+!!!3. 理解undefined和null
+{{{
+undefined是Undefined类的唯一值
+null是Null类的唯一值
+undefined == null // =&gt; true
+undefined === null // =&gt; false
+typeof(undefined) // =&gt; “undefined”
+typeof(null) // =&gt; “Object”
+null可以和其他对象进行计算
+null + 1 // =&gt; 1
+null + “abc” // =&gt; “nullabc”
+null + true // =&gt; 1
+null + null // =&gt; 0
+null + new Object() // =&gt; “null[object Object]”
+}}}
+''虽然null可以和其他对象进行计算，但编程中应该避免这样的编码。''
+
+!!!4. 闭包
+简单地说，''一个函数持有了原本在外部函数作用域内的局部变量的引用。''
+
+最简单的例子：
+{{{
+function sayHello(name){
+  var local = &quot;Hello, &quot; + name;
+  return function(){console.log(local);}
+}
+
+sayHello(&quot;kenshin&quot;)(); // =&gt; Hello, kenshin
+}}}
+
+来看以下代码
+
+{{{
+var funcs = [];
+function foo(data){
+  for (var i = 0; i &lt; data.length; i += 1) {
+    funcs.push(function(){return &quot;Num &quot; + data[i];});
+  }
+}
+
+
+function bar(){
+  foo([1,2,3,4,5]);
+  for (var i = 0; i &lt; funcs.length; i += 1) {
+    console.log(funcs[i]());
+  }
+}
+
+bar();
+}}}
+在foo函数内有局部变量data和i，循环体创建了10个匿名函数，闭包了data和i，在循环体执行完后，i最后会变成5，由于匿名函数闭包了i，所以在bar中执行匿名函数是其实执行的都是return &quot;Num&quot; + data[5];， data[5]超出了数组范围，所以结果是Num undefined。
+
+闭包本身不难，但是一不注意，就会发生意想不到的结果。
+
+以上代码改成这样，又会输出什么结果？
+
+{{{
+var funcs = [];
+function foo(data){
+  for (var i = 0; i &lt; data.length; i += 1) {
+    funcs.push(function(){return &quot;Num &quot; + data[i];});
+  }
+  i = 0;
+}
+
+
+function bar(){
+  foo([1,2,3,4,5]);
+  for (var i = 0; i &lt; funcs.length; i += 1) {
+    console.log(funcs[i]());
+  }
+}
+
+bar();
+}}}
+前面过程是一样的，在最后i被赋值0，所以匿名函数中执行的都是return Num + data[0];， 结果就是Num 1了。
+
+那怎么改代码才能让我得到想要的结果输出Num 1, Num 2, Num 3, Num 4, Num 5这种结果？
+{{{
+var funcs = [];
+function foo(data){
+  for (var i = 0; i &lt; data.length; i += 1) {
+    funcs.push((function(num){
+      return function(){
+        return &quot;Num &quot; + num;
+      };
+    })(data[i]));
+  }
+}
+
+
+function bar(){
+  foo([1,2,3,4,5]);
+  for (var i = 0; i &lt; funcs.length; i += 1) {
+    console.log(funcs[i]());
+  }
+}
+
+bar();
+}}}
+首先有一点要说明，js中方法的参数传递都是值传递，和ruby一样，上面的写法主要利用的就是这一点。
+{{{
+(function(num){
+  //...
+})(data[i]);
+}}}
+定义了一级匿名函数(a1)，同时执行a1，将data[i]作参数传给a1，由于参数都是值传递，所以a1的形参num在内存中是另外分配的地址，在将传来的data[i]，放到num里。
+
+{{{
+return function(){
+  return &quot;Num &quot; + num;
+};
+}}}
+在a1中返回同时创建匿名函数(a2)，a2的函数内部闭包了a1的局部变量num，所以a2中的num和a1中的num是同一块内存区域。
+
+{{{
+funcs.push(…)
+}}}
+由于a1是立即执行的，所以a2被返回同时push到了funcs的数组中。
+
+在来看个jquery中经常会写到的，由于this引起的闭包问题：
+
+{{{
+$('#foo').click(function(){
+  $.get('/bar', function(data){
+    $(this).append(data);
+  });
+});
+}}}
+本办法的原本意义是当点击了foo以后，异步请求/bar，将返回结果添加到自己的后面。但是像上面这样写是错误的，因为在callback这个匿名函数中的this，已经不是foo了。该调用可以理解是jquery发起的回调。this是一个jquery的内部对象。
+
+如何解决？使用闭包！
+
+{{{
+$('#foo').click(function(){
+  var _this = this;
+  $.get('/bar', function(data){
+    $(_this).append(data);
+  });
+});
+}}}</pre>
+</div>
 <div title="JavaScript原型链" creator="YourName" modifier="YourName" created="201307311001" modified="201307311004" changecount="8">
 <pre>''彻底理解原型链 (prototype chain)''
 在 ECMAScript 中，每个由构造器创建的对象拥有一个指向构造器 prototype 属性值的 隐式引用（implicit reference），这个引用称之为 原型（prototype）。进一步，每个原型可以拥有指向自己原型的 隐式引用（即该原型的原型），如此下去，这就是所谓的 原型链（prototype chain） （参考资源）。在具体的语言实现中，每个对象都有一个 __proto__ 属性来实现对原型的 隐式引用。程序清单 4说明了这一点。
@@ -637,14 +844,71 @@ You'll also need to enter your username for signing your edits: &lt;&lt;option t
 ''图 1. 原型链中的属性隐藏机制''
 [img[image001.png|http://www.ibm.com/developerworks/cn/web/1304_zengyz_jsoo/image001.png]]</pre>
 </div>
-<div title="Javascript" creator="YourName" modifier="YourName" created="201307290327" modified="201308140837" changecount="4">
+<div title="JavaScript时间控制" creator="YourName" modifier="YourName" created="201308150749" modified="201308150750" changecount="3">
+<pre>参考：http://www.ibm.com/developerworks/cn/web/wa-javascriptstart2/
+
+
+JavaScript 提供几种函数可以使您控制并设置某些动作的时间控制。最常用的函数是：
+#setInterval
+#clearInterval
+#setTimeout
+#clearTimeout
+
+!!!setInterval 函数
+不断地执行某个function：
+{{{
+ setInterval(myFunction, 10000, 'sample'); 
+ function myFunction(myArg) 
+ { 
+   alert('myFunction argument value: '+ myArg); 
+ } 
+//每过10000毫秒就执行一次myFunction
+}}}
+
+!!!clearInterval 函数
+用于中止setInterval 函数
+{{{
+ function myFunction(myArg) 
+ { 
+   alert('myFunction argument value: '+ myArg); 
+   clearInterval(myInterval); 
+ } 
+var myInterval = setInterval(myFunction, 10000, 'sample'); 
+//执行一次myFunction后停止执行。
+}}}
+
+!!!setTimeout 函数
+用于延迟某个函数的执行时间
+{{{
+
+ setTimeout(myFunction, 10000, 'sample'); 
+ function myFunction(myArg) 
+ { 
+   alert('myFunction argument value: '+ myArg); 
+ } 
+//10000毫秒后执行MyFunction
+}}}
+
+!!!clearTimeout函数
+用于中止setTimeout
+{{{
+var myTimeout = setTimeout(myFunction, 2000, 'sample');
+clearTimeout(myTimeout);
+//什么都没执行
+}}}</pre>
+</div>
+<div title="Javascript" creator="YourName" modifier="YourName" created="201307290327" modified="201308150745" changecount="7">
 <pre>[[Javascript 系列笔记(zz)|http://kenbeit.com/blog/2012/03/25/javascript-note/]]
 
 [[非常全的JavaScript语言机制参考|http://dmitrysoshnikov.com/]]
  
 [[理解JavaScript对象]] 
  
-[[JavaScript原型链]]</pre>
+[[JavaScript原型链]]
+
+[[JavaScript中的数据类型，内存分配，==和===，undefined和null，闭包]]
+
+[[JavaScript时间控制]]</pre>
 </div>
 <div title="Life" creator="YourName" modifier="YourName" created="201307250623" modified="201307250623" changecount="2">
 <pre> 
